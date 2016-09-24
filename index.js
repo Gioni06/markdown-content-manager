@@ -28,7 +28,8 @@ const options = {
         'jwt': {
             'type': 'apiKey',
             'name': 'Authorization',
-            'in': 'header'
+            'in': 'header',
+            'placeholder': 'API Key'
         }
     },
     tags: [
@@ -57,7 +58,11 @@ const hapiPlugins = [
     }
 ];
 
-// Add the route
+const jsonResponseSchema = Joi.object({
+    status: Joi.number().required(),
+    message: Joi.string().required(),
+    data: Joi.object({data: '...'})
+});
 
 /**
  * Welcome route
@@ -78,6 +83,9 @@ server.route({
             return reply(welcomeMessage)
                 .type(RESPONSE_TYPES.JSON)
                 .header('X-Author', 'Jonas Duri');
+        },
+        response: {
+            schema: jsonResponseSchema
         },
         description: 'Get a friendly welcome message',
         notes: 'You can pass your name as a parameter',
@@ -101,6 +109,9 @@ server.route({
             return reply(welcomeMessage)
                 .type(RESPONSE_TYPES.JSON)
                 .header('X-Author', 'Jonas Duri');
+        },
+        response: {
+            schema: jsonResponseSchema
         },
         description: 'Get a friendly welcome message',
         notes: 'See the welcome message',
