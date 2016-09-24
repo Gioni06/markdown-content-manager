@@ -16,7 +16,6 @@ server.connection({
 });
 
 const options = {
-    basePath: '/api',
     info: {
         'title': 'Markdown Content Server Documentation',
         'version': Pack.version,
@@ -34,14 +33,19 @@ const options = {
     },
     tags: [
         {
-            'name': 'Application',
-            'description': 'Application Root'
+            name: 'Welcome',
+            description: 'Basic welcome message'
+        },
+        {
+            name : 'User',
+            description: 'A more personal welcome message'
         }
     ],
     schemes: ['http'],
     host: 'localhost:8080',
     jsonEditor: true,
-    sortTags: 'default'
+    sortTags: 'name',
+    sortEndpoints: 'path'
 };
 
 const hapiPlugins = [
@@ -55,37 +59,12 @@ const hapiPlugins = [
 
 // Add the route
 
+/**
+ * Welcome route
+ */
 server.route({
     method: 'GET',
-    path:'/api/welcome/{name}',
-    config: {
-        handler: function (request, reply) {
-            const welcomeMessage = {
-                status: 200,
-                message: 'Ok',
-                data: {
-                    data: `Welcome ${request.params.name}`
-                }
-            };
-
-            return reply(welcomeMessage)
-                .type(RESPONSE_TYPES.JSON)
-                .header('X-Author', 'Jonas Duri');
-        },
-        description: 'Get a friendly welcome message',
-        notes: 'See the welcome message',
-        tags: ['api', 'welcome'],
-        validate: {
-            params: {
-                name: Joi.string().required()
-            },
-        }
-    }
-});
-
-server.route({
-    method: 'GET',
-    path:'/api/welcome',
+    path:'/welcome',
     config: {
         handler: function (request, reply) {
             const welcomeMessage = {
@@ -102,7 +81,35 @@ server.route({
         },
         description: 'Get a friendly welcome message',
         notes: 'You can pass your name as a parameter',
-        tags: ['api', 'welcome'],
+        tags: ['api','Welcome'],
+    }
+});
+
+server.route({
+    method: 'GET',
+    path:'/user/welcome/{name}',
+    config: {
+        handler: function (request, reply) {
+            const welcomeMessage = {
+                status: 200,
+                message: 'Ok',
+                data: {
+                    data: `Welcome ${request.params.name}`
+                }
+            };
+
+            return reply(welcomeMessage)
+                .type(RESPONSE_TYPES.JSON)
+                .header('X-Author', 'Jonas Duri');
+        },
+        description: 'Get a friendly welcome message',
+        notes: 'See the welcome message',
+        tags: ['api','User'],
+        validate: {
+            params: {
+                name: Joi.string().required()
+            },
+        }
     }
 });
 
