@@ -115,9 +115,9 @@ server.register(hapiPlugins, function (err) {
     }
 
     server.auth.strategy('jwt', 'jwt',
-        { key: process.env.JWT_SECRET,          // Never Share your secret key
-            validateFunc: validate,            // validate function defined above
-            verifyOptions: { algorithms: [ 'HS256' ], ignoreExpiration: true } // pick a strong algorithm
+        { key: process.env.JWT_SECRET,
+            validateFunc: validate,
+            verifyOptions: { algorithms: [ 'HS256' ], ignoreExpiration: true }
         });
     server.auth.default('jwt');
 
