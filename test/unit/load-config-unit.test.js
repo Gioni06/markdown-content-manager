@@ -5,14 +5,13 @@ const Lab = require('lab');
 
 const lab = exports.lab = Lab.script();
 const expect = Code.expect;
-const sinon = require('sinon');
 
-lab.experiment('Load Config', function() {
+lab.experiment('Load Config', () => {
 
     lab.it('should load developement configuration', (done) => {
 
-        var Config = require('./../../app/loadConfig');
-        var config = Config.loadConfig('development');
+        const Config = require('./../../app/loadConfig');
+        const config = Config.loadConfig('development');
 
         expect(config.environment).to.equal('development');
         done();
@@ -20,8 +19,8 @@ lab.experiment('Load Config', function() {
 
     lab.it('should load production configuration', (done) => {
 
-        var Config = require('./../../app/loadConfig');
-        var config = Config.loadConfig('production');
+        const Config = require('./../../app/loadConfig');
+        const config = Config.loadConfig('production');
 
         expect(config.environment).to.equal('production');
         done();
@@ -30,9 +29,9 @@ lab.experiment('Load Config', function() {
 
     lab.it('should throw an error when no environment is specified', (done) => {
 
-        var Config = require('./../../app/loadConfig');
+        const Config = require('./../../app/loadConfig');
 
-        var Error = Config.loadConfig();
+        const Error = Config.loadConfig();
 
         expect(Error.message).to.equal('Cannot load config file.');
         done();

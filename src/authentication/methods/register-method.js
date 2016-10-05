@@ -3,13 +3,13 @@ const Boom = require('boom');
 const UserModel = require('./../../models/UserModel/userModel');
 
 /**
- * RegisterHandler factory function for the register Route.
+ * RegisterHandler factory function for the Register Route.
  *
  * Use the factory pattern to create hapi route handlers with dependency injection
  * to mock dependencies like Mongoose Models or service calls
  *
  * Example:
- *      server.route( register(registerHandler().handler) );
+ *      server.route( Register(RegisterHandler().handler) );
  *
  * In this example you can swap the actual UserModel with a mock implementation to run e2e tests
  * for api endpoints
@@ -20,18 +20,19 @@ module.exports = function () {
 
     /**
      * Creates a new user
-     * User is a reference to the mongoose model
+     * User is a reference to the Mongoose model
      */
     return {
         handler: (request, reply) => {
-            let user = new UserModel(request.payload);
-            user.save(function (err, user) {
-                if(err) {
+
+            const User = new UserModel(request.payload);
+            User.save((err, user) => {
+
+                if (err) {
                     return reply(Boom.badRequest('Cannot create user'));
-                } else {
-                    return reply({message: 'User Saved Successfully', data: user}).code(201);
                 }
-            })
+                return reply({ message: 'User Saved Successfully', data: user }).code(201);
+            });
         }
-    }
+    };
 };

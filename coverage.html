@@ -571,7 +571,7 @@
           <div class="failures">0</div>
           <div class="skipped">0</div>
           <div class="test-count">10</div>
-          <div class="duration">385</div>
+          <div class="duration">420</div>
       </div>
       <div id="filters">
           <input type="checkbox" checked="" onchange="filter(this)" value="success" id="show-success">
@@ -602,14 +602,14 @@
               <td class="test-title">Authentication Plugin should create a new user
                   
               </td>
-              <td class="test-duration">145</td>
+              <td class="test-duration">167</td>
           </tr>
           <tr class="show Authentication_Plugin success">
               <td class="test-id">2</td>
               <td class="test-title">Authentication Plugin should fail when user creation fails
                   
               </td>
-              <td class="test-duration">93</td>
+              <td class="test-duration">100</td>
           </tr>
           <tr class="show Load_Config success">
               <td class="test-id">3</td>
@@ -630,28 +630,28 @@
               <td class="test-title">Load Config should throw an error when no environment is specified
                   
               </td>
-              <td class="test-duration">0</td>
+              <td class="test-duration">1</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
               <td class="test-id">6</td>
               <td class="test-title">Redis service unit test should create a Redis client
                   
               </td>
-              <td class="test-duration">2</td>
+              <td class="test-duration">1</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
               <td class="test-id">7</td>
               <td class="test-title">Redis service unit test should set a value
                   
               </td>
-              <td class="test-duration">1</td>
+              <td class="test-duration">3</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
               <td class="test-id">8</td>
               <td class="test-title">Redis service unit test should get a value
                   
               </td>
-              <td class="test-duration">1</td>
+              <td class="test-duration">2</td>
           </tr>
           <tr class="show UserModel success">
               <td class="test-id">9</td>
@@ -665,7 +665,7 @@
               <td class="test-title">UserModel should throw an error when password is invalid
                   
               </td>
-              <td class="test-duration">69</td>
+              <td class="test-duration">71</td>
           </tr>
           </tbody>
       </table>
@@ -674,8 +674,8 @@
         <h1>Code Coverage Report</h1>
         <div class="stats high">
             <div class="percentage">100%</div>
-            <div class="sloc">168</div>
-            <div class="hits">168</div>
+            <div class="sloc">179</div>
+            <div class="hits">179</div>
             <div class="misses">0</div>
         </div>
         <div id="files">
@@ -706,80 +706,98 @@
                         <tr class="hit">
                             <td class="line" data-tooltip>2</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">exports.loadConfig &#x3D; function(environment) {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>3</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">    if (!environment) {</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">exports.loadConfig &#x3D; function (environment) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>4</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">        return new Error(&#x27;Cannot load config file.&#x27;);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>5</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    } else {</td>
+                            <td class="source">    if (!environment) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>6</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>3</td>
-                            <td class="source">        var config;</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">        return new Error(&#x27;Cannot load config file.&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>7</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>3</td>
-                            <td class="source">        if(environment &#x3D;&#x3D;&#x3D; &#x27;production&#x27;) {</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>8</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">            config &#x3D; require(&#x27;./../config/config.production.json&#x27;);</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>9</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">        } else {</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>10</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">            config &#x3D; require(&#x27;./../config/config.dev.json&#x27;);</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>11</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">        }</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>12</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>3</td>
-                            <td class="source">        return config;</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>13</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
                             <td class="source">    }</td>
                         </tr>
                         <tr class="hit">
+                            <td class="line" data-tooltip>8</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>3</td>
+                            <td class="source">    let config;</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>9</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>3</td>
+                            <td class="source">    if (environment &#x3D;&#x3D;&#x3D; &#x27;production&#x27;) {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>10</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">        config &#x3D; require(&#x27;./../config/config.production.json&#x27;);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>11</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>12</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    else {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>13</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">        config &#x3D; require(&#x27;./../config/config.dev.json&#x27;);</td>
+                        </tr>
+                        <tr class="hit">
                             <td class="line" data-tooltip>14</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
+                            <td class="source">    }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>15</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>3</td>
+                            <td class="source">    return config;</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>16</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
                             <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>17</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -788,8 +806,8 @@
                 <h2 id="src/authentication/methods/register-method.js">src/authentication/methods/register-method.js</h2>
                 <div class="stats high">
                     <div class="percentage">100%</div>
-                    <div class="sloc">35</div>
-                    <div class="hits">35</div>
+                    <div class="sloc">34</div>
+                    <div class="hits">34</div>
                     <div class="misses">0</div>
                 </div>
                 <table>
@@ -836,7 +854,7 @@
                             <td class="line" data-tooltip>6</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> * RegisterHandler factory function for the register Route.</td>
+                            <td class="source"> * RegisterHandler factory function for the Register Route.</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>7</td>
@@ -872,7 +890,7 @@
                             <td class="line" data-tooltip>12</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> *      server.route( register(registerHandler().handler) );</td>
+                            <td class="source"> *      server.route( Register(RegisterHandler().handler) );</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>13</td>
@@ -938,7 +956,7 @@
                             <td class="line" data-tooltip>23</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">     * User is a reference to the mongoose model</td>
+                            <td class="source">     * User is a reference to the Mongoose model</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>24</td>
@@ -962,37 +980,37 @@
                             <td class="line" data-tooltip>27</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            let user &#x3D; new UserModel(request.payload);</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>28</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">            user.save(function (err, user) {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            const User &#x3D; new UserModel(request.payload);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>29</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">                if(err) {</td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">            User.save((err, user) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>30</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">                    return reply(Boom.badRequest(&#x27;Cannot create user&#x27;));</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>31</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">                } else {</td>
+                            <td class="source">                if (err) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>32</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">                    return reply({message: &#x27;User Saved Successfully&#x27;, data: user}).code(201);</td>
+                            <td class="source">                    return reply(Boom.badRequest(&#x27;Cannot create user&#x27;));</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>33</td>
@@ -1003,26 +1021,38 @@
                         <tr class="hit">
                             <td class="line" data-tooltip>34</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">            })</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">                return reply({ message: &#x27;User Saved Successfully&#x27;, data: user }).code(201);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>35</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        }</td>
+                            <td class="source">            });</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>36</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    }</td>
+                            <td class="source">        }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>37</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
+                            <td class="source">    };</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>38</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
                             <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>39</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1073,151 +1103,163 @@
                             <td class="line" data-tooltip>5</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">module.exports &#x3D; function(handler) {</td>
+                            <td class="source">module.exports &#x3D; (handler) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>6</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    return {</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>7</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        method: &#x27;POST&#x27;,</td>
+                            <td class="source">    return {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>8</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        path: &quot;/register&quot;,</td>
+                            <td class="source">        method: &#x27;POST&#x27;,</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>9</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        config: {</td>
+                            <td class="source">        path: &#x27;/Register&#x27;,</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>10</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            auth: false,</td>
+                            <td class="source">        config: {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>11</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            handler: handler,</td>
+                            <td class="source">            auth: false,</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>12</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            validate: {</td>
+                            <td class="source">            handler,</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>13</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">                payload: {</td>
+                            <td class="source">            validate: {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>14</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">                    email: Joi.string().email().required(),</td>
+                            <td class="source">                payload: {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>15</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">                    password: Joi.string().required()</td>
+                            <td class="source">                    email: Joi.string().email().required(),</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>16</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">                }</td>
+                            <td class="source">                    password: Joi.string().required()</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>17</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            },</td>
+                            <td class="source">                }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>18</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            response: {</td>
+                            <td class="source">            },</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>19</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">                schema: Joi.object({</td>
+                            <td class="source">            response: {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>20</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">                    message: Joi.string().required(),</td>
+                            <td class="source">                schema: Joi.object({</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>21</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">                    data: Joi.object()</td>
+                            <td class="source">                    message: Joi.string().required(),</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>22</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">                })</td>
+                            <td class="source">                    data: Joi.object()</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>23</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            },</td>
+                            <td class="source">                })</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>24</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            description: &#x27;Register a user&#x27;,</td>
+                            <td class="source">            },</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>25</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            notes: &#x27;....&#x27;,</td>
+                            <td class="source">            description: &#x27;Register a user&#x27;,</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>26</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            tags: [&#x27;api&#x27;, &#x27;User&#x27;],</td>
+                            <td class="source">            notes: &#x27;....&#x27;,</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>27</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        }</td>
+                            <td class="source">            tags: [&#x27;api&#x27;, &#x27;User&#x27;]</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>28</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    }</td>
+                            <td class="source">        }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>29</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
+                            <td class="source">    };</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>30</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
                             <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>31</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1226,8 +1268,8 @@
                 <h2 id="src/models/UserModel/preSaveFn.js">src/models/UserModel/preSaveFn.js</h2>
                 <div class="stats high">
                     <div class="percentage">100%</div>
-                    <div class="sloc">25</div>
-                    <div class="hits">25</div>
+                    <div class="sloc">30</div>
+                    <div class="hits">30</div>
                     <div class="misses">0</div>
                 </div>
                 <table>
@@ -1256,7 +1298,7 @@
                             <td class="line" data-tooltip>3</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">const bcrypt &#x3D; require(&#x27;bcrypt&#x27;);</td>
+                            <td class="source">const Bcrypt &#x3D; require(&#x27;bcrypt&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>4</td>
@@ -1268,13 +1310,13 @@
                             <td class="line" data-tooltip>5</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">module.exports &#x3D; function(next) {</td>
+                            <td class="source">module.exports &#x3D; function (next) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>6</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    var user &#x3D; this;</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>7</td>
@@ -1292,133 +1334,175 @@
                             <td class="line" data-tooltip>9</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    if (!user.isModified(&#x27;password&#x27;)) return next();</td>
+                            <td class="source">    if (!this.isModified(&#x27;password&#x27;)) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>10</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    /* $lab:coverage:on$ */</td>
+                            <td class="source">        return next();</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>11</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">    }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>12</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    // generate a salt</td>
+                            <td class="source">    /* $lab:coverage:on$ */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>13</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">    bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>14</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        /* $lab:coverage:off$ */</td>
+                            <td class="source">    // generate a salt</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>15</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">        if (err) return next(err);</td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">    Bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>16</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        /* $lab:coverage:on$ */</td>
+                            <td class="source">        /* $lab:coverage:off$ */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>17</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">        if (err) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>18</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        // hash the password using our new salt</td>
+                            <td class="source">            return next(err);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>19</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">        }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>20</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">        bcrypt.hash(user.password, salt, function(err, hash) {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        /* $lab:coverage:on$ */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>21</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            /* $lab:coverage:off$ */</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>22</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            if (err) return next(err);</td>
+                            <td class="source">        // hash the password using our new salt</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>23</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            /* $lab:coverage:on$ */</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>24</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">        Bcrypt.hash(this.password, salt, (err, hash) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>25</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            // override the cleartext password with the hashed one</td>
+                            <td class="source">            /* $lab:coverage:off$ */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>26</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">            user.password &#x3D; hash;</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            if (err) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>27</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">            next();</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">                return next(err);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>28</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        });</td>
+                            <td class="source">            }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>29</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    });</td>
+                            <td class="source">            /* $lab:coverage:on$ */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>30</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>31</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            // override the cleartext password with the hashed one</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>32</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">            this.password &#x3D; hash;</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>33</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">            next();</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>34</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>35</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>36</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
                             <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>37</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1427,8 +1511,8 @@
                 <h2 id="src/models/UserModel/userModel.js">src/models/UserModel/userModel.js</h2>
                 <div class="stats high">
                     <div class="percentage">100%</div>
-                    <div class="sloc">27</div>
-                    <div class="hits">27</div>
+                    <div class="sloc">32</div>
+                    <div class="hits">32</div>
                     <div class="misses">0</div>
                 </div>
                 <table>
@@ -1457,25 +1541,25 @@
                             <td class="line" data-tooltip>3</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">const mongoose &#x3D; require(&#x27;mongoose&#x27;);</td>
+                            <td class="source">const Mongoose &#x3D; require(&#x27;mongoose&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>4</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">const Schema &#x3D; mongoose.Schema;</td>
+                            <td class="source">const Schema &#x3D; Mongoose.Schema;</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>5</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">const bcrypt &#x3D; require(&#x27;bcrypt&#x27;);</td>
+                            <td class="source">const Bcrypt &#x3D; require(&#x27;bcrypt&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>6</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">const preSaveFunction &#x3D; require(&#x27;./preSaveFn&#x27;);</td>
+                            <td class="source">const PreSaveFunction &#x3D; require(&#x27;./preSaveFn&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>7</td>
@@ -1487,7 +1571,7 @@
                             <td class="line" data-tooltip>8</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">var UserSchema &#x3D; Schema({</td>
+                            <td class="source">const UserSchema &#x3D; Schema({</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>9</td>
@@ -1553,7 +1637,7 @@
                             <td class="line" data-tooltip>19</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">UserSchema.pre(&#x27;save&#x27;, preSaveFunction);</td>
+                            <td class="source">UserSchema.pre(&#x27;save&#x27;, PreSaveFunction);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>20</td>
@@ -1564,80 +1648,134 @@
                         <tr class="hit">
                             <td class="line" data-tooltip>21</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">UserSchema.methods.comparePassword &#x3D; function (candidatePassword, cb) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>22</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">UserSchema.methods.comparePassword &#x3D; function(candidatePassword, cb) {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>23</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {</td>
+                            <td class="source">    Bcrypt.compare(candidatePassword, this.password, (err, isMatch) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>24</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        if(isMatch &#x3D;&#x3D;&#x3D; false) {</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>25</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">            cb(true, false)</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        /* $lab:coverage:off$ */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>26</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        }</td>
+                            <td class="source">        if (err) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>27</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">        if(isMatch &#x3D;&#x3D;&#x3D; true) {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            throw new Error(err);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>28</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">            cb(false, true)</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>29</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        }</td>
+                            <td class="source">        /* $lab:coverage:on$ */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>30</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    });</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>31</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">};</td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">        if (isMatch &#x3D;&#x3D;&#x3D; false) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>32</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">            cb(true,false);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>33</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>34</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
                             <td class="source"></td>
                         </tr>
                         <tr class="hit">
-                            <td class="line" data-tooltip>33</td>
+                            <td class="line" data-tooltip>35</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">        if (isMatch &#x3D;&#x3D;&#x3D; true) {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>36</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">module.exports &#x3D; mongoose.model(&#x27;User&#x27;, UserSchema);</td>
+                            <td class="source">            cb(false,true);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>37</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>38</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>39</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>40</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>41</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">module.exports &#x3D; Mongoose.model(&#x27;User&#x27;, UserSchema);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>42</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1646,8 +1784,8 @@
                 <h2 id="src/services/RedisService.js">src/services/RedisService.js</h2>
                 <div class="stats high">
                     <div class="percentage">100%</div>
-                    <div class="sloc">40</div>
-                    <div class="hits">40</div>
+                    <div class="sloc">42</div>
+                    <div class="hits">42</div>
                     <div class="misses">0</div>
                 </div>
                 <table>
@@ -1675,74 +1813,74 @@
                         <tr class="hit">
                             <td class="line" data-tooltip>3</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">var _ &#x3D; require(&#x27;lodash&#x27;);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">// Ignore this eslint since module &#x27;rewire&#x27; cannot work with const</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>4</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">var Redis &#x3D; require(&#x27;redis&#x27;);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">/*eslint-disable */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>5</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">var Config &#x3D; require(&#x27;./../../app/loadConfig&#x27;);</td>
+                            <td class="source">let Redis &#x3D; require(&#x27;redis&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>6</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">var config &#x3D; Config.loadConfig(&#x27;development&#x27;);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">/*eslint-enable */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>7</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const Config &#x3D; require(&#x27;./../../app/loadConfig&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>8</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">/**</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const config &#x3D; Config.loadConfig(&#x27;development&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>9</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> * Init Service</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>10</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> * @type {{}}</td>
+                            <td class="source">/**</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>11</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> */</td>
+                            <td class="source"> * Init Service</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>12</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source"> * @type {{}}</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>13</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source"> */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>14</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">var service &#x3D; {};</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>15</td>
@@ -1753,38 +1891,38 @@
                         <tr class="hit">
                             <td class="line" data-tooltip>16</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">/**</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const service &#x3D; {};</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>17</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> * Creates a redis client</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>18</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> */</td>
+                            <td class="source">/**</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>19</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">service.createClient &#x3D; function() {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"> * Creates a redis client</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>20</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    return Redis.createClient(config.database.redis.port, config.database.redis.path, {detect_buffers: true});</td>
+                            <td class="source"> */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>21</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">};</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">service.createClient &#x3D; () &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>22</td>
@@ -1796,157 +1934,199 @@
                             <td class="line" data-tooltip>23</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">/**</td>
+                            <td class="source">    return Redis.createClient(config.database.redis.port, config.database.redis.path, { detect_buffers: true });</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>24</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> * Sets a value in Redis store</td>
+                            <td class="source">};</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>25</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> * @param key</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>26</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> * @param val</td>
+                            <td class="source">/**</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>27</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> * @returns {*}</td>
+                            <td class="source"> * Sets a value in Redis store</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>28</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"> */</td>
+                            <td class="source"> * @param key</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>29</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">service.set &#x3D; function (key, val) {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"> * @param val</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>30</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    var redisClient &#x3D; service.createClient();</td>
+                            <td class="source"> * @returns {*}</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>31</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">    redisClient.set(key, val);</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>32</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">    redisClient.quit();</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>33</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">};</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>34</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>35</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">/**</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>36</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"> * Gets a value from Redis store</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>37</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"> * @param key</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>38</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"> * @param callback</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>39</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
                             <td class="source"> */</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line" data-tooltip>40</td>
+                            <td class="line" data-tooltip>32</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">service.get &#x3D; function (key, callback) {</td>
+                            <td class="source">service.set &#x3D; (key, val) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line" data-tooltip>41</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">    var redisClient &#x3D; service.createClient();</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>42</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">    redisClient.get(key, function (err, reply) {</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>43</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">        callback(err, reply);</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>44</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">    });</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>45</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">    redisClient.quit();</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>46</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">};</td>
-                        </tr>
-                        <tr class="hit">
-                            <td class="line" data-tooltip>47</td>
+                            <td class="line" data-tooltip>33</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
                             <td class="source"></td>
                         </tr>
                         <tr class="hit">
+                            <td class="line" data-tooltip>34</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    const redisClient &#x3D; service.createClient();</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>35</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">    redisClient.set(key, val);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>36</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">    redisClient.quit();</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>37</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>38</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>39</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">/**</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>40</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"> * Gets a value from Redis store</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>41</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"> * @param key</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>42</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"> * @param callback</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>43</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"> */</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>44</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">service.get &#x3D; (key, callback) &#x3D;&gt; {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>45</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>46</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    const redisClient &#x3D; service.createClient();</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>47</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">    redisClient.get(key, (err, reply) &#x3D;&gt; {</td>
+                        </tr>
+                        <tr class="hit">
                             <td class="line" data-tooltip>48</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>49</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        callback(err, reply);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>50</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>51</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">    redisClient.quit();</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>52</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>53</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>54</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
                             <td class="source">module.exports  &#x3D; service;</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>55</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1954,6 +2134,11 @@
         </div>
     </div>    <div id="linting">
         <h1>Linting Report</h1>
-            <span>Nothing to show here, linting is disabled.</span>
+            <div class="lint-stats">
+                <span class="lint-errors high">0</span>
+                <span class="lint-warnings high">0</span>
+            </div>
+            <div class="lint-files">
+            </div>
     </div>  </body>
 </html>

@@ -1,9 +1,11 @@
 'use strict';
 
-var _ = require('lodash');
-var Redis = require('redis');
-var Config = require('./../../app/loadConfig');
-var config = Config.loadConfig('development');
+// Ignore this eslint since module 'rewire' cannot work with const
+/*eslint-disable */
+let Redis = require('redis');
+/*eslint-enable */
+const Config = require('./../../app/loadConfig');
+const config = Config.loadConfig('development');
 
 /**
  * Init Service
@@ -11,13 +13,14 @@ var config = Config.loadConfig('development');
  */
 
 
-var service = {};
+const service = {};
 
 /**
  * Creates a redis client
  */
-service.createClient = function() {
-    return Redis.createClient(config.database.redis.port, config.database.redis.path, {detect_buffers: true});
+service.createClient = () => {
+
+    return Redis.createClient(config.database.redis.port, config.database.redis.path, { detect_buffers: true });
 };
 
 /**
@@ -26,8 +29,9 @@ service.createClient = function() {
  * @param val
  * @returns {*}
  */
-service.set = function (key, val) {
-    var redisClient = service.createClient();
+service.set = (key, val) => {
+
+    const redisClient = service.createClient();
     redisClient.set(key, val);
     redisClient.quit();
 };
@@ -37,9 +41,11 @@ service.set = function (key, val) {
  * @param key
  * @param callback
  */
-service.get = function (key, callback) {
-    var redisClient = service.createClient();
-    redisClient.get(key, function (err, reply) {
+service.get = (key, callback) => {
+
+    const redisClient = service.createClient();
+    redisClient.get(key, (err, reply) => {
+
         callback(err, reply);
     });
     redisClient.quit();

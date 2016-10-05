@@ -1,0 +1,9 @@
+{
+    "extends": "eslint-config-hapi",
+    "installedESLint": true,
+    "plugins": [
+        "standard",
+        "promise",
+        "hapi"
+    ]
+}

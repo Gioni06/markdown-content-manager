@@ -1,7 +1,8 @@
 'use strict';
 
-const server = require('./src/server');
+const Server = require('./src/server');
 
-server.start(function () {
-    server.log('info', 'Server running at: ' + server.info.uri);
+Server.start(() => {
+
+    Server.log('info', 'Server running at: ' + Server.info.uri);
 });

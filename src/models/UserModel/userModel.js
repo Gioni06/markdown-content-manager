@@ -1,11 +1,11 @@
 'use strict';
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
-const preSaveFunction = require('./preSaveFn');
+const Mongoose = require('mongoose');
+const Schema = Mongoose.Schema;
+const Bcrypt = require('bcrypt');
+const PreSaveFunction = require('./preSaveFn');
 
-var UserSchema = Schema({
+const UserSchema = Schema({
     email: {
         type: String,
         required: true
@@ -16,18 +16,26 @@ var UserSchema = Schema({
     }
 });
 
-UserSchema.pre('save', preSaveFunction);
+UserSchema.pre('save', PreSaveFunction);
 
+UserSchema.methods.comparePassword = function (candidatePassword, cb) {
 
-UserSchema.methods.comparePassword = function(candidatePassword, cb) {
-    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-        if(isMatch === false) {
-            cb(true, false)
+    Bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
+
+        /* $lab:coverage:off$ */
+        if (err) {
+            throw new Error(err);
         }
-        if(isMatch === true) {
-            cb(false, true)
+        /* $lab:coverage:on$ */
+
+        if (isMatch === false) {
+            cb(true,false);
+        }
+
+        if (isMatch === true) {
+            cb(false,true);
         }
     });
 };
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = Mongoose.model('User', UserSchema);

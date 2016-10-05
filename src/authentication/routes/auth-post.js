@@ -2,13 +2,14 @@
 
 const Joi = require('joi');
 
-module.exports = function (handler) {
+module.exports = (handler) => {
+
     return {
         method: 'POST',
-        path: "/auth",
+        path: '/auth',
         config: {
             auth: false,
-            handler: handler,
+            handler,
             validate: {
                 payload: {
                     email: Joi.string().required(),
@@ -17,7 +18,7 @@ module.exports = function (handler) {
             },
             description: 'Login and get authorization token',
             notes: '....',
-            tags: ['api', 'User'],
+            tags: ['api', 'User']
         }
-    }
+    };
 };

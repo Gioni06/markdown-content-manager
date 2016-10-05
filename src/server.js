@@ -5,34 +5,35 @@ const Inert = require('inert');
 const Vision = require('vision');
 const Joi = require('joi');
 const HapiSwagger = require('hapi-swagger');
-const hapiAuthJWT = require('hapi-auth-jwt2'); // http://git.io/vT5dZ
-const JWT = require('jsonwebtoken');   // used to sign our content
-const port = process.env.PORT;  // allow port to be set
+const HapiAuthJWT = require('hapi-auth-jwt2'); // http://git.io/vT5dZ
 const RedisService = require('./services/RedisService');
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://root:root123@database:27017/markdown');
+const Mongoose = require('mongoose');
+const JWT_SECRET = process.env.JWT_SECRET;
 
-var validate = function (decoded, request, callback) {
-    RedisService.get(decoded.id, function (error, response) {
+Mongoose.connect('mongodb://root:root123@database:27017/markdown');
 
-        if(error) {
+const validate = (decoded, request, callback) => {
+
+    RedisService.get(decoded.id, (error, response) => {
+
+        if (error) {
             server.log(error);
         }
 
-        var session;
+        let session;
 
-        if(response) {
+        if (response) {
             session = JSON.parse(response);
-        } else {
+        }
+        else {
             return callback(error, false);
         }
 
-        if (session.valid === true) {
-            return callback(error, true);
-        } else {
-
+        if (session.valid !== true) {
             return callback(error, false);
         }
+
+        return callback(error, true);
     });
 
 };
@@ -81,12 +82,12 @@ const options = {
 
 const hapiPlugins = [
     require('./authentication'),
-    hapiAuthJWT,
+    HapiAuthJWT,
     Inert,
     Vision,
     {
         register: HapiSwagger,
-        options: options
+        options
     }
 ];
 
@@ -97,27 +98,30 @@ const jsonResponseSchema = Joi.object({
 });
 
 
-server.register(hapiPlugins, function (err) {
-    if(err) {
+server.register(hapiPlugins, (err) => {
+
+    if (err) {
         throw err;
     }
 
     server.auth.strategy('jwt', 'jwt',
-        { key: process.env.JWT_SECRET,
+        {
+            key: JWT_SECRET,
             validateFunc: validate,
-            verifyOptions: { algorithms: [ 'HS256' ], ignoreExpiration: true }
+            verifyOptions: { algorithms: ['HS256'], ignoreExpiration: true }
         });
 
     server.route({
         method: 'GET',
         path:'/welcome',
         config: {
-            handler: function (request, reply) {
+            handler: (request, reply) => {
+
                 const welcomeMessage = {
                     status: 200,
                     message: 'Ok',
                     data: {
-                        data: `Welcome anonymous`
+                        data: 'Welcome anonymous'
                     }
                 };
 
@@ -130,7 +134,7 @@ server.register(hapiPlugins, function (err) {
             },
             description: 'Get a friendly welcome message',
             notes: 'You can pass your name as a parameter',
-            tags: ['api','Welcome'],
+            tags: ['api','Welcome']
         }
     });
 
@@ -139,7 +143,8 @@ server.register(hapiPlugins, function (err) {
         path:'/user/welcome/{name}',
         config: {
             auth: 'jwt',
-            handler: function (request, reply) {
+            handler: (request, reply) => {
+
                 const welcomeMessage = {
                     status: 200,
                     message: 'Ok',

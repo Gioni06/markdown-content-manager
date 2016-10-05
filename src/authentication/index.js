@@ -1,19 +1,20 @@
 'use strict';
 
-const authHandler = require('./methods/auth-method');
-const auth = require('./routes/auth-post');
+const AuthHandler = require('./methods/auth-method');
+const Auth = require('./routes/auth-post');
 
-const registerHandler = require('./methods/register-method');
-const register = require('./routes/register-post');
+const RegisterHandler = require('./methods/register-method');
+const Register = require('./routes/register-post');
 
 exports.register = function (server, options, next) {
 
-    server.route(auth(authHandler));
-    server.route(register(registerHandler().handler));
+    server.route(Auth(AuthHandler));
+    server.route(Register(RegisterHandler().handler));
     server.route({
         method: 'GET',
         path: '/test',
-        handler: function(request, reply) {
+        handler: function (request, reply) {
+
             reply('hello');
         }
     });

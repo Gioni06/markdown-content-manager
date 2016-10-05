@@ -2,91 +2,100 @@
 
 const Code = require('code');
 const Lab = require('lab');
-const Hapi = require('hapi');
 
 const lab = exports.lab = Lab.script();
 const expect = Code.expect;
-const sinon = require('sinon');
-var rewire = require('rewire');
-var RedisService = rewire('./../../src/services/RedisService');
+const Sinon = require('sinon');
+const Rewire = require('rewire');
+const RedisService = Rewire('./../../src/services/RedisService');
 
-lab.experiment('Redis service unit test', function() {
+lab.experiment('Redis service unit test', () => {
 
     lab.it('should create a Redis client', (done) => {
-        var RedisMock = {
-          createClient : function(port, host) {
-              return {
-                  get: sinon.spy(function(key, cb){
-                      cb('test val')
-                  }),
 
-                  set: sinon.spy(function(key, val){
+        const RedisMock = {
+            createClient: (port, host) => {
 
-                  }),
+                return {
+                    get: Sinon.spy((key, cb) => {
 
-                  quit: sinon.spy(function(){
-                      return true;
-                  })
-              };
-          }
+                        cb('test val');
+                    }),
+
+                    set: Sinon.spy((key, val) => {
+
+                    }),
+
+                    quit: Sinon.spy(() => {
+
+                        return true;
+                    })
+                };
+            }
         };
 
         RedisService.__set__('Redis', RedisMock);
 
-        var client = RedisService.createClient('host', '123');
+        const client = RedisService.createClient('host', '123');
         expect(client.get).to.be.a.function();
         done();
     });
 
     lab.it('should set a value', (done) => {
 
-        var redisMock = {
-            get: sinon.spy(function(key){
-                return "test val";
+        const redisMock = {
+            get: Sinon.spy((key) => {
+
+                return 'test val';
             }),
-            set: sinon.spy(function(key, val){
+            set: Sinon.spy((key, val) => {
 
             }),
-            quit: sinon.spy(function(){
+            quit: Sinon.spy(() => {
+
                 return true;
             })
         };
 
-        var createClient = sinon.stub(RedisService,'createClient', function() {
+        const createClient = Sinon.stub(RedisService, 'createClient', () => {
+
             return redisMock;
         });
 
         RedisService.set('test', 'test val');
-        sinon.assert.calledWith(redisMock.set, 'test', 'test val');
-        sinon.assert.callCount(redisMock.set, 1);
+        Sinon.assert.calledWith(redisMock.set, 'test', 'test val');
+        Sinon.assert.callCount(redisMock.set, 1);
         createClient.restore();
         done();
     });
 
     lab.it('should get a value', (done) => {
 
-        var redisMock = {
-            get: sinon.spy(function(key, cb){
-                cb('test val')
+        const redisMock = {
+            get: Sinon.spy((key, cb) => {
+
+                cb('test val');
             }),
 
-            set: sinon.spy(function(key, val){
+            set: Sinon.spy((key, val) => {
 
             }),
 
-            quit: sinon.spy(function(){
+            quit: Sinon.spy(() => {
+
                 return true;
             })
         };
 
-        var createClient = sinon.stub(RedisService,'createClient', function() {
+        const createClient = Sinon.stub(RedisService, 'createClient', () => {
+
             return redisMock;
         });
 
-        RedisService.get('test', function() {
+        RedisService.get('test', () => {
 
         });
-        sinon.assert.calledWith(redisMock.get,'test');
+        Sinon.assert.calledWith(redisMock.get, 'test');
         createClient.restore();
         done();
     });

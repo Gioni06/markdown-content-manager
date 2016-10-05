@@ -2,13 +2,14 @@
 
 const Joi = require('joi');
 
-module.exports = function(handler) {
+module.exports = (handler) => {
+
     return {
         method: 'POST',
-        path: "/register",
+        path: '/Register',
         config: {
             auth: false,
-            handler: handler,
+            handler,
             validate: {
                 payload: {
                     email: Joi.string().email().required(),
@@ -23,7 +24,7 @@ module.exports = function(handler) {
             },
             description: 'Register a user',
             notes: '....',
-            tags: ['api', 'User'],
+            tags: ['api', 'User']
         }
-    }
+    };
 };
