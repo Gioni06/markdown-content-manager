@@ -33,6 +33,14 @@ const validate = (decoded, request, callback) => {
             return callback(error, false);
         }
 
+        if (new Date().getTime() > session.exp) {
+            const newSession = Object.assign({}, session);
+            newSession.valid = false;
+            RedisService.set(session.id, JSON.stringify(newSession));
+            return callback(new Error('Session expired'), false);
+        }
+
+
         return callback(error, true);
     });
 
@@ -108,7 +116,7 @@ server.register(hapiPlugins, (err) => {
         {
             key: JWT_SECRET,
             validateFunc: validate,
-            verifyOptions: { algorithms: ['HS256'], ignoreExpiration: true }
+            verifyOptions: { algorithms: ['HS256'], ignoreExpiration: false }
         });
 
     server.route({

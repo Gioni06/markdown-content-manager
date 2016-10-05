@@ -6,7 +6,7 @@ module.exports = (handler) => {
 
     return {
         method: 'POST',
-        path: '/Register',
+        path: '/register',
         config: {
             auth: false,
             handler,

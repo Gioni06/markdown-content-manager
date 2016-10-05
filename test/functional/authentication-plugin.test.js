@@ -33,7 +33,7 @@ lab.experiment('Authentication Plugin', () => {
         Server.route(RegisterRoute(RegisterHandler().handler));
         const request = {
             method : 'POST',
-            url: '/Register',
+            url: '/register',
             payload: {
                 email: 'test@test.de',
                 password: '123'
@@ -70,7 +70,7 @@ lab.experiment('Authentication Plugin', () => {
         Server.route(RegisterRoute(RegisterHandler().handler));
         const request = {
             method : 'POST',
-            url: '/Register',
+            url: '/register',
             payload: {
                 email: 'test@test.de',
                 password: '123'
