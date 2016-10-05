@@ -1,0 +1,12 @@
+{
+  "environment": "production",
+  "database" : {
+    "redis": {
+      "path": "redis",
+      "port": "0000"
+    },
+    "mongo": {
+
+    }
+  }
+}
