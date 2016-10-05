@@ -7,7 +7,7 @@ const Hapi = require('hapi');
 const lab = exports.lab = Lab.script();
 const expect = Code.expect;
 const Sinon = require('sinon');
-const UserModel = require('./../src/models/UserModel/userModel');
+const UserModel = require('./../../src/models/UserModel/userModel');
 
 lab.experiment('Authentication Plugin', () => {
 
@@ -26,8 +26,8 @@ lab.experiment('Authentication Plugin', () => {
         const User = Sinon.stub(UserModel.prototype,'save').yields(null, expectedUser);
 
 
-        const RegisterHandler = require('./../src/authentication/methods/register-method');
-        const RegisterRoute = require('./../src/authentication/routes/register-post');
+        const RegisterHandler = require('./../../src/authentication/methods/register-method');
+        const RegisterRoute = require('./../../src/authentication/routes/register-post');
         const Server = new Hapi.Server();
         Server.connection();
         Server.route(RegisterRoute(RegisterHandler().handler));
@@ -63,8 +63,8 @@ lab.experiment('Authentication Plugin', () => {
         // Stub the save function on the instance prototype
         Sinon.stub(UserModel.prototype,'save').yields(new Error('Save error'));
 
-        const RegisterHandler = require('./../src/authentication/methods/register-method');
-        const RegisterRoute = require('./../src/authentication/routes/register-post');
+        const RegisterHandler = require('./../../src/authentication/methods/register-method');
+        const RegisterRoute = require('./../../src/authentication/routes/register-post');
         const Server = new Hapi.Server();
         Server.connection({});
         Server.route(RegisterRoute(RegisterHandler().handler));
