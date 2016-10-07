@@ -39,9 +39,9 @@ UserSchema.methods.comparePassword = function (candidatePassword, cb) {
     });
 };
 
-UserSchema.statics.saveUser = function (candidate, cb) {
+UserSchema.methods.saveUser = function (cb) {
 
-    this.findOne({ email: candidate.email }, (err, user) => {
+    this.model('User').findOne({ email: this.email }, (err, user) => {
 
         if (err) {
             return cb(err,null);
@@ -52,7 +52,7 @@ UserSchema.statics.saveUser = function (candidate, cb) {
                 return cb(new Error('User already exists'),null);
             }
         }
-        candidate.save((err, savedUser) => {
+        this.save((err, savedUser) => {
 
             if (err) {
                 return cb(err,null);

@@ -571,7 +571,7 @@
           <div class="failures">0</div>
           <div class="skipped">0</div>
           <div class="test-count">15</div>
-          <div class="duration">287</div>
+          <div class="duration">293</div>
       </div>
       <div id="filters">
           <input type="checkbox" checked="" onchange="filter(this)" value="success" id="show-success">
@@ -602,7 +602,7 @@
               <td class="test-title">Authentication Plugin should create a new user
                   
               </td>
-              <td class="test-duration">76</td>
+              <td class="test-duration">75</td>
           </tr>
           <tr class="show Authentication_Plugin success">
               <td class="test-id">2</td>
@@ -616,7 +616,7 @@
               <td class="test-title">Authentication Plugin should fail when user creation fails
                   
               </td>
-              <td class="test-duration">19</td>
+              <td class="test-duration">21</td>
           </tr>
           <tr class="show Load_Config success">
               <td class="test-id">4</td>
@@ -630,7 +630,7 @@
               <td class="test-title">Load Config should load production configuration
                   
               </td>
-              <td class="test-duration">2</td>
+              <td class="test-duration">1</td>
           </tr>
           <tr class="show Load_Config success">
               <td class="test-id">6</td>
@@ -644,42 +644,42 @@
               <td class="test-title">Redis service unit test should create a Redis client
                   
               </td>
-              <td class="test-duration">1</td>
+              <td class="test-duration">2</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
               <td class="test-id">8</td>
               <td class="test-title">Redis service unit test should set a value
                   
               </td>
-              <td class="test-duration">3</td>
+              <td class="test-duration">2</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
               <td class="test-id">9</td>
               <td class="test-title">Redis service unit test should get a value
                   
               </td>
-              <td class="test-duration">1</td>
+              <td class="test-duration">2</td>
           </tr>
           <tr class="show UserModel success">
               <td class="test-id">10</td>
               <td class="test-title">UserModel should compare passwords
                   
               </td>
-              <td class="test-duration">77</td>
+              <td class="test-duration">80</td>
           </tr>
           <tr class="show UserModel success">
               <td class="test-id">11</td>
               <td class="test-title">UserModel should throw an error when password is invalid
                   
               </td>
-              <td class="test-duration">73</td>
+              <td class="test-duration">74</td>
           </tr>
           <tr class="show UserModel success">
               <td class="test-id">12</td>
               <td class="test-title">UserModel should not save a user which is already saved
                   
               </td>
-              <td class="test-duration">2</td>
+              <td class="test-duration">4</td>
           </tr>
           <tr class="show UserModel success">
               <td class="test-id">13</td>
@@ -1027,7 +1027,7 @@
                             <td class="line" data-tooltip>29</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>3</td>
-                            <td class="source">            UserModel.saveUser(User, (err, user) &#x3D;&gt; {</td>
+                            <td class="source">            User.saveUser((err, user) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>30</td>
@@ -1792,7 +1792,7 @@
                             <td class="line" data-tooltip>42</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">UserSchema.statics.saveUser &#x3D; function (candidate, cb) {</td>
+                            <td class="source">UserSchema.methods.saveUser &#x3D; function (cb) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>43</td>
@@ -1804,7 +1804,7 @@
                             <td class="line" data-tooltip>44</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    this.findOne({ email: candidate.email }, (err, user) &#x3D;&gt; {</td>
+                            <td class="source">    this.model(&#x27;User&#x27;).findOne({ email: this.email }, (err, user) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>45</td>
@@ -1870,7 +1870,7 @@
                             <td class="line" data-tooltip>55</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>2</td>
-                            <td class="source">        candidate.save((err, savedUser) &#x3D;&gt; {</td>
+                            <td class="source">        this.save((err, savedUser) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>56</td>

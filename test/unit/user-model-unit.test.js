@@ -66,7 +66,7 @@ lab.experiment('UserModel', () => {
         User.validate();
         // // Stub the save function on the instance prototype
         // var User = Sinon.stub(UserModel.prototype,'comparePassword').yields(null, true);
-        UserModel.saveUser(User, (err, user) => {
+        User.saveUser((err, user) => {
 
             expect(err.message).to.equal('User already exists');
             findOneStub.restore();
@@ -92,7 +92,7 @@ lab.experiment('UserModel', () => {
 
         const findOneStub = Sinon.stub(UserModel, 'findOne').yields(null, undefined);
 
-        UserModel.saveUser(User, (err, user) => {
+        User.saveUser((err, user) => {
 
             expect(err).to.equal(null);
             expect(user.email).to.equal('test@test.de');
@@ -120,7 +120,7 @@ lab.experiment('UserModel', () => {
 
         const findOneStub = Sinon.stub(UserModel, 'findOne').yields(new Error('Error'), []);
 
-        UserModel.saveUser(User, (err, user) => {
+        User.saveUser((err, user) => {
 
             expect(err.message).to.equal('Error');
             findOneStub.restore();
@@ -146,7 +146,7 @@ lab.experiment('UserModel', () => {
 
         const findOneStub = Sinon.stub(UserModel, 'findOne').yields(null, []);
 
-        UserModel.saveUser(User, (err, user) => {
+        User.saveUser((err, user) => {
 
             expect(err.message).to.equal('Error');
             findOneStub.restore();

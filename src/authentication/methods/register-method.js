@@ -26,7 +26,7 @@ module.exports = function () {
         handler: (request, reply) => {
 
             const User = new UserModel(request.payload);
-            UserModel.saveUser(User, (err, user) => {
+            User.saveUser((err, user) => {
 
                 if (err) {
                     if (err.message === 'User already exists') {
