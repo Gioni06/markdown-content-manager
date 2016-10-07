@@ -23,7 +23,7 @@ lab.experiment('Authentication Plugin', () => {
         const UserMock = Sinon.mock(new UserModel(expectedUser));
 
         // Stub the save function on the instance prototype
-        const User = Sinon.stub(UserModel.prototype,'save').yields(null, expectedUser);
+        const User = Sinon.stub(UserModel,'saveUser').yields(null, expectedUser);
 
 
         const RegisterHandler = require('./../../src/authentication/methods/register-method');
@@ -49,7 +49,7 @@ lab.experiment('Authentication Plugin', () => {
         });
     });
 
-    lab.it('should fail when user creation fails', (done) => {
+    lab.it('should fail when user already exists', (done) => {
 
         const expectedUser = {
             _id: '132',
@@ -57,11 +57,53 @@ lab.experiment('Authentication Plugin', () => {
             password: '123'
         };
 
+        const SaveError = new Error('User already exists');
+
         // Create a new user instance from mocked Mongoose model
-        Sinon.mock(new UserModel(expectedUser));
+        const UserMock = Sinon.mock(new UserModel(expectedUser));
 
         // Stub the save function on the instance prototype
-        Sinon.stub(UserModel.prototype,'save').yields(new Error('Save error'));
+        const User = Sinon.stub(UserModel,'saveUser').yields(SaveError,null);
+
+
+        const RegisterHandler = require('./../../src/authentication/methods/register-method');
+        const RegisterRoute = require('./../../src/authentication/routes/register-post');
+
+        const Server = new Hapi.Server();
+        Server.connection({});
+        Server.route(RegisterRoute(RegisterHandler().handler));
+
+        const request = {
+            method : 'POST',
+            url: '/register',
+            payload: {
+                email: 'test@test.de',
+                password: '123'
+            }
+        };
+
+        Server.inject(request, (response) => {
+
+            expect(response.statusCode).to.equal(406);
+            UserMock.restore();
+            User.restore();
+            Server.stop(done);
+        });
+    });
+
+    lab.it('should fail when user creation fails', (done) => {
+
+        const expectedUser = {
+            _id: '132',
+            email: 'test_fail@test.de',
+            password: '123'
+        };
+
+        // Create a new user instance from mocked Mongoose model
+        const UserMock = Sinon.mock(new UserModel(expectedUser));
+
+        // Stub the save function on the instance prototype
+        const User = Sinon.stub(UserModel,'saveUser').yields(new Error('Save error'), null);
 
         const RegisterHandler = require('./../../src/authentication/methods/register-method');
         const RegisterRoute = require('./../../src/authentication/routes/register-post');
@@ -72,7 +114,7 @@ lab.experiment('Authentication Plugin', () => {
             method : 'POST',
             url: '/register',
             payload: {
-                email: 'test@test.de',
+                email: 'test_fail@test.de',
                 password: '123'
             }
         };
@@ -80,6 +122,8 @@ lab.experiment('Authentication Plugin', () => {
 
             expect(response.statusCode).to.equal(400);
             expect(response.result.message).to.equal('Cannot create user');
+            UserMock.restore();
+            User.restore();
             Server.stop(done);
         });
     });

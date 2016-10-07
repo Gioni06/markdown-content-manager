@@ -1,92 +1,22 @@
 'use strict';
-const Pack = require('./../package.json');
 const Hapi = require('hapi');
 const Inert = require('inert');
 const Vision = require('vision');
 const Joi = require('joi');
 const HapiSwagger = require('hapi-swagger');
 const HapiAuthJWT = require('hapi-auth-jwt2'); // http://git.io/vT5dZ
-const RedisService = require('./services/RedisService');
+const Validate = require('./services/validateTokenFn');
 const Mongoose = require('mongoose');
 const JWT_SECRET = process.env.JWT_SECRET;
-
+const Config = require('./../app/loadConfig');
+const config = Config.loadConfig(process.env.environment || 'development');
+const HapiOptions = require('./../config/hapi-options');
 Mongoose.connect('mongodb://root:root123@database:27017/markdown');
-
-const validate = (decoded, request, callback) => {
-
-    RedisService.get(decoded.id, (error, response) => {
-
-        if (error) {
-            server.log(error);
-        }
-
-        let session;
-
-        if (response) {
-            session = JSON.parse(response);
-        }
-        else {
-            return callback(error, false);
-        }
-
-        if (session.valid !== true) {
-            return callback(error, false);
-        }
-
-        if (new Date().getTime() > session.exp) {
-            const newSession = Object.assign({}, session);
-            newSession.valid = false;
-            RedisService.set(session.id, JSON.stringify(newSession));
-            return callback(new Error('Session expired'), false);
-        }
-
-
-        return callback(error, true);
-    });
-
-};
 
 // Create a server with a host and port
 const server = new Hapi.Server();
 
-server.connection({
-    host: '0.0.0.0',
-    port: 9000
-});
-
-const options = {
-    info: {
-        'title': 'Markdown Content Server Documentation',
-        'version': Pack.version,
-        contact: {
-            'name': 'Jonas Duri',
-            'email': 'jonas.duri@gmail.com'
-        }
-    },
-    securityDefinitions: {
-        'jwt': {
-            'type': 'apiKey',
-            'name': 'Authorization',
-            'in': 'header',
-            'placeholder': 'API Key'
-        }
-    },
-    tags: [
-        {
-            name: 'Welcome',
-            description: 'Basic welcome message'
-        },
-        {
-            name : 'User',
-            description: 'A more personal welcome message'
-        }
-    ],
-    schemes: ['http'],
-    host: 'localhost:8080',
-    jsonEditor: true,
-    sortTags: 'name',
-    sortEndpoints: 'path'
-};
+server.connection(config.server.connection);
 
 const hapiPlugins = [
     require('./authentication'),
@@ -95,7 +25,7 @@ const hapiPlugins = [
     Vision,
     {
         register: HapiSwagger,
-        options
+        options: HapiOptions
     }
 ];
 
@@ -115,7 +45,7 @@ server.register(hapiPlugins, (err) => {
     server.auth.strategy('jwt', 'jwt',
         {
             key: JWT_SECRET,
-            validateFunc: validate,
+            validateFunc: Validate,
             verifyOptions: { algorithms: ['HS256'], ignoreExpiration: false }
         });
 

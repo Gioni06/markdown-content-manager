@@ -16,6 +16,7 @@ const UserSchema = Schema({
     }
 });
 
+
 UserSchema.pre('save', PreSaveFunction);
 
 UserSchema.methods.comparePassword = function (candidatePassword, cb) {
@@ -37,5 +38,29 @@ UserSchema.methods.comparePassword = function (candidatePassword, cb) {
         }
     });
 };
+
+UserSchema.statics.saveUser = function (candidate, cb) {
+
+    this.findOne({ email: candidate.email }, (err, user) => {
+
+        if (err) {
+            return cb(err,null);
+        }
+
+        if (user) {
+            if (user.email) {
+                return cb(new Error('User already exists'),null);
+            }
+        }
+        candidate.save((err, savedUser) => {
+
+            if (err) {
+                return cb(err,null);
+            }
+            return cb(null, savedUser);
+        });
+    });
+};
+
 
 module.exports = Mongoose.model('User', UserSchema);

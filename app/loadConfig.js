@@ -2,10 +2,10 @@
 
 exports.loadConfig = function (environment) {
 
+    let config;
     if (!environment) {
         return new Error('Cannot load config file.');
     }
-    let config;
     if (environment === 'production') {
         config = require('./../config/config.production.json');
     }

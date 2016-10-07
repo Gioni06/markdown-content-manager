@@ -26,9 +26,12 @@ module.exports = function () {
         handler: (request, reply) => {
 
             const User = new UserModel(request.payload);
-            User.save((err, user) => {
+            UserModel.saveUser(User, (err, user) => {
 
                 if (err) {
+                    if (err.message === 'User already exists') {
+                        return reply(Boom.notAcceptable('User already exists'));
+                    }
                     return reply(Boom.badRequest('Cannot create user'));
                 }
                 return reply({ message: 'User Saved Successfully', data: user }).code(201);
