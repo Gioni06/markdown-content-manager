@@ -10,7 +10,6 @@ module.exports = function (next) {
         return next();
     }
 
-
     // generate a salt
     Bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) => {
 
@@ -31,6 +30,7 @@ module.exports = function (next) {
             this.password = hash;
             next();
         });
+
     });
 };
 /* $lab:coverage:on$ */

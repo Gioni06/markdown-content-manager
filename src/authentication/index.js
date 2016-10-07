@@ -10,14 +10,6 @@ exports.register = function (server, options, next) {
 
     server.route(Auth(AuthHandler));
     server.route(Register(RegisterHandler().handler));
-    server.route({
-        method: 'GET',
-        path: '/test',
-        handler: function (request, reply) {
-
-            reply('hello');
-        }
-    });
 
     next();
 };

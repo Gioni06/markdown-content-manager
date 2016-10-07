@@ -19,10 +19,11 @@ const server = new Hapi.Server();
 server.connection(config.server.connection);
 
 const hapiPlugins = [
-    require('./authentication'),
     HapiAuthJWT,
     Inert,
     Vision,
+    require('./authentication'),
+    require('./documents'),
     {
         register: HapiSwagger,
         options: HapiOptions

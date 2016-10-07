@@ -553,6 +553,22 @@
         </li>
         <li>
             <span class="cov high">100</span>
+            <a href="#src/documents/methods/document-post-method.js"><span class="dirname">src/documents/methods/</span><span class="basename">document-post-method.js</span></a>
+        </li>
+        <li>
+            <span class="cov high">100</span>
+            <a href="#src/documents/routes/document-post.js"><span class="dirname">src/documents/routes/</span><span class="basename">document-post.js</span></a>
+        </li>
+        <li>
+            <span class="cov high">100</span>
+            <a href="#src/models/DocumentsModel/documentModel.js"><span class="dirname">src/models/DocumentsModel/</span><span class="basename">documentModel.js</span></a>
+        </li>
+        <li>
+            <span class="cov high">100</span>
+            <a href="#src/models/UserModel/addApiKeysFn.js"><span class="dirname">src/models/UserModel/</span><span class="basename">addApiKeysFn.js</span></a>
+        </li>
+        <li>
+            <span class="cov high">100</span>
             <a href="#src/models/UserModel/preSaveFn.js"><span class="dirname">src/models/UserModel/</span><span class="basename">preSaveFn.js</span></a>
         </li>
         <li>
@@ -570,8 +586,8 @@
       <div class="stats high">
           <div class="failures">0</div>
           <div class="skipped">0</div>
-          <div class="test-count">15</div>
-          <div class="duration">293</div>
+          <div class="test-count">18</div>
+          <div class="duration">427</div>
       </div>
       <div id="filters">
           <input type="checkbox" checked="" onchange="filter(this)" value="success" id="show-success">
@@ -581,6 +597,10 @@
           <br>
           <input type="checkbox" checked="" onchange="filter(this)" value="Authentication_Plugin" id="show-Authentication_Plugin">
           <label for="show-Authentication_Plugin">Authentication Plugin</label>
+          <input type="checkbox" checked="" onchange="filter(this)" value="Document_Plugin" id="show-Document_Plugin">
+          <label for="show-Document_Plugin">Document Plugin</label>
+          <input type="checkbox" checked="" onchange="filter(this)" value="DocumentModel" id="show-DocumentModel">
+          <label for="show-DocumentModel">DocumentModel</label>
           <input type="checkbox" checked="" onchange="filter(this)" value="Load_Config" id="show-Load_Config">
           <label for="show-Load_Config">Load Config</label>
           <input type="checkbox" checked="" onchange="filter(this)" value="Redis_service_unit_test" id="show-Redis_service_unit_test">
@@ -602,101 +622,122 @@
               <td class="test-title">Authentication Plugin should create a new user
                   
               </td>
-              <td class="test-duration">75</td>
+              <td class="test-duration">126</td>
           </tr>
           <tr class="show Authentication_Plugin success">
               <td class="test-id">2</td>
               <td class="test-title">Authentication Plugin should fail when user already exists
                   
               </td>
-              <td class="test-duration">21</td>
+              <td class="test-duration">29</td>
           </tr>
           <tr class="show Authentication_Plugin success">
               <td class="test-id">3</td>
               <td class="test-title">Authentication Plugin should fail when user creation fails
                   
               </td>
-              <td class="test-duration">21</td>
+              <td class="test-duration">22</td>
+          </tr>
+          <tr class="show Document_Plugin success">
+              <td class="test-id">4</td>
+              <td class="test-title">Document Plugin should create a new document
+                  
+              </td>
+              <td class="test-duration">53</td>
+          </tr>
+          <tr class="show Document_Plugin success">
+              <td class="test-id">5</td>
+              <td class="test-title">Document Plugin should respond with an error when document creation fails
+                  
+              </td>
+              <td class="test-duration">22</td>
+          </tr>
+          <tr class="show DocumentModel success">
+              <td class="test-id">6</td>
+              <td class="test-title">DocumentModel should save a document
+                  
+              </td>
+              <td class="test-duration">1</td>
           </tr>
           <tr class="show Load_Config success">
-              <td class="test-id">4</td>
+              <td class="test-id">7</td>
               <td class="test-title">Load Config should load developement configuration
                   
               </td>
               <td class="test-duration">1</td>
           </tr>
           <tr class="show Load_Config success">
-              <td class="test-id">5</td>
+              <td class="test-id">8</td>
               <td class="test-title">Load Config should load production configuration
                   
               </td>
               <td class="test-duration">1</td>
           </tr>
           <tr class="show Load_Config success">
-              <td class="test-id">6</td>
+              <td class="test-id">9</td>
               <td class="test-title">Load Config should throw an error when no environment is specified
                   
               </td>
               <td class="test-duration">1</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
-              <td class="test-id">7</td>
+              <td class="test-id">10</td>
               <td class="test-title">Redis service unit test should create a Redis client
                   
               </td>
               <td class="test-duration">2</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
-              <td class="test-id">8</td>
+              <td class="test-id">11</td>
               <td class="test-title">Redis service unit test should set a value
                   
               </td>
-              <td class="test-duration">2</td>
+              <td class="test-duration">3</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
-              <td class="test-id">9</td>
+              <td class="test-id">12</td>
               <td class="test-title">Redis service unit test should get a value
                   
               </td>
-              <td class="test-duration">2</td>
-          </tr>
-          <tr class="show UserModel success">
-              <td class="test-id">10</td>
-              <td class="test-title">UserModel should compare passwords
-                  
-              </td>
-              <td class="test-duration">80</td>
-          </tr>
-          <tr class="show UserModel success">
-              <td class="test-id">11</td>
-              <td class="test-title">UserModel should throw an error when password is invalid
-                  
-              </td>
-              <td class="test-duration">74</td>
-          </tr>
-          <tr class="show UserModel success">
-              <td class="test-id">12</td>
-              <td class="test-title">UserModel should not save a user which is already saved
-                  
-              </td>
-              <td class="test-duration">4</td>
+              <td class="test-duration">1</td>
           </tr>
           <tr class="show UserModel success">
               <td class="test-id">13</td>
+              <td class="test-title">UserModel should compare passwords
+                  
+              </td>
+              <td class="test-duration">75</td>
+          </tr>
+          <tr class="show UserModel success">
+              <td class="test-id">14</td>
+              <td class="test-title">UserModel should throw an error when password is invalid
+                  
+              </td>
+              <td class="test-duration">77</td>
+          </tr>
+          <tr class="show UserModel success">
+              <td class="test-id">15</td>
+              <td class="test-title">UserModel should not save a user which is already saved
+                  
+              </td>
+              <td class="test-duration">2</td>
+          </tr>
+          <tr class="show UserModel success">
+              <td class="test-id">16</td>
               <td class="test-title">UserModel should save a user which is not already saved
                   
               </td>
               <td class="test-duration">2</td>
           </tr>
           <tr class="show UserModel success">
-              <td class="test-id">14</td>
+              <td class="test-id">17</td>
               <td class="test-title">UserModel should not save a user when findone returns an error
                   
               </td>
               <td class="test-duration">2</td>
           </tr>
           <tr class="show UserModel success">
-              <td class="test-id">15</td>
+              <td class="test-id">18</td>
               <td class="test-title">UserModel should not save a user when save returns an error
                   
               </td>
@@ -709,8 +750,8 @@
         <h1>Code Coverage Report</h1>
         <div class="stats high">
             <div class="percentage">100%</div>
-            <div class="sloc">190</div>
-            <div class="hits">190</div>
+            <div class="sloc">253</div>
+            <div class="hits">253</div>
             <div class="misses">0</div>
         </div>
         <div id="files">
@@ -1282,6 +1323,522 @@
                 </table>
             </div>
             <div class="file">
+                <h2 id="src/documents/methods/document-post-method.js">src/documents/methods/document-post-method.js</h2>
+                <div class="stats high">
+                    <div class="percentage">100%</div>
+                    <div class="sloc">12</div>
+                    <div class="hits">12</div>
+                    <div class="misses">0</div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Line</th>
+                            <th>Lint</th>
+                            <th>Hits</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>1</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">&#x27;use strict&#x27;;</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>2</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>3</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const DocumentModel &#x3D; require(&#x27;./../../models/DocumentsModel/documentModel&#x27;);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>4</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const Boom &#x3D; require(&#x27;boom&#x27;);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>5</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>6</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">module.exports &#x3D; (request, reply) &#x3D;&gt; {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>7</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>8</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    const Document &#x3D; new DocumentModel(request.payload);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>9</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">    Document.save((err, document) &#x3D;&gt; {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>10</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>11</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        if (err) {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>12</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">            return reply(Boom.badRequest(&#x27;Cannot create document&#x27;));</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>13</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>14</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">        return reply({ message: &#x27;Document saved successfully&#x27;, data: document }).code(201);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>15</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>16</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>17</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="file">
+                <h2 id="src/documents/routes/document-post.js">src/documents/routes/document-post.js</h2>
+                <div class="stats high">
+                    <div class="percentage">100%</div>
+                    <div class="sloc">20</div>
+                    <div class="hits">20</div>
+                    <div class="misses">0</div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Line</th>
+                            <th>Lint</th>
+                            <th>Hits</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>1</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">&#x27;use strict&#x27;;</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>2</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>3</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const Joi &#x3D; require(&#x27;joi&#x27;);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>4</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>5</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">module.exports &#x3D; (handler) &#x3D;&gt; {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>6</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>7</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    return {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>8</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        method: &#x27;POST&#x27;,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>9</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        path: &#x27;/document&#x27;,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>10</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        config: {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>11</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            auth: &#x27;jwt&#x27;,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>12</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            handler,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>13</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            validate: {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>14</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">                payload: {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>15</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">                    body: Joi.string().required()</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>16</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">                }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>17</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            },</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>18</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            description: &#x27;Creates a new document&#x27;,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>19</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            notes: &#x27;....&#x27;,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>20</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            tags: [&#x27;api&#x27;, &#x27;document&#x27;]</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>21</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>22</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    };</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>23</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>24</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="file">
+                <h2 id="src/models/DocumentsModel/documentModel.js">src/models/DocumentsModel/documentModel.js</h2>
+                <div class="stats high">
+                    <div class="percentage">100%</div>
+                    <div class="sloc">10</div>
+                    <div class="hits">10</div>
+                    <div class="misses">0</div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Line</th>
+                            <th>Lint</th>
+                            <th>Hits</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>1</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">&#x27;use strict&#x27;;</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>2</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>3</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const Mongoose &#x3D; require(&#x27;mongoose&#x27;);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>4</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const Schema &#x3D; Mongoose.Schema;</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>5</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>6</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const DocumentSchema &#x3D; Schema({</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>7</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    body: {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>8</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        type: String,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>9</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        required: true</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>10</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>11</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">});</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>12</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>13</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">module.exports &#x3D; Mongoose.model(&#x27;Document&#x27;, DocumentSchema);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>14</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="file">
+                <h2 id="src/models/UserModel/addApiKeysFn.js">src/models/UserModel/addApiKeysFn.js</h2>
+                <div class="stats high">
+                    <div class="percentage">100%</div>
+                    <div class="sloc">13</div>
+                    <div class="hits">13</div>
+                    <div class="misses">0</div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Line</th>
+                            <th>Lint</th>
+                            <th>Hits</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>1</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">&#x27;use strict&#x27;;</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>2</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>3</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">/* $lab:coverage:off$ */</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>4</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">const UUID &#x3D; require(&#x27;node-uuid&#x27;);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>5</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">module.exports &#x3D; function (next) {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>6</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>7</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    if (!this.apiKeyProduction) {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>8</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        this.apiKeyProduction &#x3D; UUID.v4().split(&#x27;-&#x27;).join(&#x27;&#x27;);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>9</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>10</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>11</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    if (!this.apiKeyPreview) {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>12</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        this.apiKeyPreview &#x3D; UUID.v4().split(&#x27;-&#x27;).join(&#x27;&#x27;);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>13</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>14</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    next();</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>15</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>16</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">/* $lab:coverage:on$ */</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>17</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="file">
                 <h2 id="src/models/UserModel/preSaveFn.js">src/models/UserModel/preSaveFn.js</h2>
                 <div class="stats high">
                     <div class="percentage">100%</div>
@@ -1375,43 +1932,43 @@
                             <td class="line" data-tooltip>13</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">    // generate a salt</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>14</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    // generate a salt</td>
+                            <td class="source">    Bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>15</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    Bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) &#x3D;&gt; {</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>16</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">        if (err) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>17</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        if (err) {</td>
+                            <td class="source">            return next(err);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>18</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            return next(err);</td>
+                            <td class="source">        }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>19</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        }</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>20</td>
@@ -1423,79 +1980,79 @@
                             <td class="line" data-tooltip>21</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">        // hash the password using our new salt</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>22</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        // hash the password using our new salt</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>23</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">        Bcrypt.hash(this.password, salt, (err, hash) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>24</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        Bcrypt.hash(this.password, salt, (err, hash) &#x3D;&gt; {</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>25</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">            if (err) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>26</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            if (err) {</td>
+                            <td class="source">                return next(err);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>27</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">                return next(err);</td>
+                            <td class="source">            }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>28</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            }</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>29</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">            // override the cleartext password with the hashed one</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>30</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            // override the cleartext password with the hashed one</td>
+                            <td class="source">            this.password &#x3D; hash;</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>31</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            this.password &#x3D; hash;</td>
+                            <td class="source">            next();</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>32</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            next();</td>
+                            <td class="source">        });</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>33</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        });</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>34</td>
@@ -1528,8 +2085,8 @@
                 <h2 id="src/models/UserModel/userModel.js">src/models/UserModel/userModel.js</h2>
                 <div class="stats high">
                     <div class="percentage">100%</div>
-                    <div class="sloc">50</div>
-                    <div class="hits">50</div>
+                    <div class="sloc">58</div>
+                    <div class="hits">58</div>
                     <div class="misses">0</div>
                 </div>
                 <table>
@@ -1575,194 +2132,194 @@
                         <tr class="hit">
                             <td class="line" data-tooltip>6</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">const PreSaveFunction &#x3D; require(&#x27;./preSaveFn&#x27;);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>7</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const PreSaveFunction &#x3D; require(&#x27;./preSaveFn&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>8</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">const UserSchema &#x3D; Schema({</td>
+                            <td class="source">const AddApiKeyFunction &#x3D; require(&#x27;./addApiKeysFn&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>9</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    email: {</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>10</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">        type: String,</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const UserSchema &#x3D; Schema({</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>11</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        required: true</td>
+                            <td class="source">    email: {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>12</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    },</td>
+                            <td class="source">        type: String,</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>13</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    password: {</td>
+                            <td class="source">        required: true</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>14</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        type: String,</td>
+                            <td class="source">    },</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>15</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        required: true</td>
+                            <td class="source">    password: {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>16</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    }</td>
+                            <td class="source">        type: String,</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>17</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">});</td>
+                            <td class="source">        required: true</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>18</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">    },</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>19</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">    apiKeyProduction: {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>20</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">UserSchema.pre(&#x27;save&#x27;, PreSaveFunction);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        type: String</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>21</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">    },</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>22</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">UserSchema.methods.comparePassword &#x3D; function (candidatePassword, cb) {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    apiKeyPreview: {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>23</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">        type: String</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>24</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    Bcrypt.compare(candidatePassword, this.password, (err, isMatch) &#x3D;&gt; {</td>
+                            <td class="source">    }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>25</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">});</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>26</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        /* $lab:coverage:off$ */</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>27</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        if (err) {</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>28</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">            throw new Error(err);</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">UserSchema.pre(&#x27;save&#x27;, PreSaveFunction);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>29</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">        }</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">UserSchema.pre(&#x27;save&#x27;, AddApiKeyFunction);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>30</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        /* $lab:coverage:on$ */</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>31</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">UserSchema.methods.comparePassword &#x3D; function (candidatePassword, cb) {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>32</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
                             <td class="source"></td>
                         </tr>
                         <tr class="hit">
-                            <td class="line" data-tooltip>32</td>
-                            <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">        if (isMatch &#x3D;&#x3D;&#x3D; false) {</td>
-                        </tr>
-                        <tr class="hit">
                             <td class="line" data-tooltip>33</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">            cb(true,false);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    Bcrypt.compare(candidatePassword, this.password, (err, isMatch) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>34</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        }</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>35</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">        /* $lab:coverage:off$ */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>36</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">        if (isMatch &#x3D;&#x3D;&#x3D; true) {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        if (err) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>37</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">            cb(false,true);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            throw new Error(err);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>38</td>
@@ -1774,157 +2331,157 @@
                             <td class="line" data-tooltip>39</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    });</td>
+                            <td class="source">        /* $lab:coverage:on$ */</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>40</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">};</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>41</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">        if (isMatch &#x3D;&#x3D;&#x3D; false) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>42</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">UserSchema.methods.saveUser &#x3D; function (cb) {</td>
+                            <td class="source">            cb(true,false);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>43</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">        }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>44</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    this.model(&#x27;User&#x27;).findOne({ email: this.email }, (err, user) &#x3D;&gt; {</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>45</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">        if (isMatch &#x3D;&#x3D;&#x3D; true) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>46</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">        if (err) {</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">            cb(false,true);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>47</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">            return cb(err,null);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>48</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        }</td>
+                            <td class="source">    });</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>49</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">};</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>50</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>3</td>
-                            <td class="source">        if (user) {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>51</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">            if (user.email) {</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">UserSchema.methods.saveUser &#x3D; function (cb) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>52</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">                return cb(new Error(&#x27;User already exists&#x27;),null);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>53</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            }</td>
+                            <td class="source">    this.model(&#x27;User&#x27;).findOne({ email: this.email }, (err, user) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>54</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        }</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>55</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">        this.save((err, savedUser) &#x3D;&gt; {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        if (err) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>56</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">            return cb(err,null);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>57</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            if (err) {</td>
+                            <td class="source">        }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>58</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">                return cb(err,null);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>59</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">            }</td>
+                            <td class="hits" data-tooltip>3</td>
+                            <td class="source">        if (user) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>60</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">            return cb(null, savedUser);</td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">            if (user.email) {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>61</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">        });</td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">                return cb(new Error(&#x27;User already exists&#x27;),null);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>62</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    });</td>
+                            <td class="source">            }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>63</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">};</td>
+                            <td class="source">        }</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>64</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">        this.save((err, savedUser) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>65</td>
@@ -1935,11 +2492,65 @@
                         <tr class="hit">
                             <td class="line" data-tooltip>66</td>
                             <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            if (err) {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>67</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">                return cb(err,null);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>68</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">            }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>69</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">            return cb(null, savedUser);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>70</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>71</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>72</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>73</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>74</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>75</td>
+                            <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
                             <td class="source">module.exports &#x3D; Mongoose.model(&#x27;User&#x27;, UserSchema);</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line" data-tooltip>67</td>
+                            <td class="line" data-tooltip>76</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
                             <td class="source"></td>

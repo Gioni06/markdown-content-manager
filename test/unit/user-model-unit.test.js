@@ -82,6 +82,7 @@ lab.experiment('UserModel', () => {
             password: '$2a$10$xoIFSmYy6GNLKxGEQbxKwusHsvOffzn3uaYJIpqJDTCxIA76MIesu'
         };
 
+
         const User = new UserModel(expectedUser);
         User.validate();
 

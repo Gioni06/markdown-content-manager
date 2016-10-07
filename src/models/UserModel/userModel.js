@@ -3,7 +3,9 @@
 const Mongoose = require('mongoose');
 const Schema = Mongoose.Schema;
 const Bcrypt = require('bcrypt');
+
 const PreSaveFunction = require('./preSaveFn');
+const AddApiKeyFunction = require('./addApiKeysFn');
 
 const UserSchema = Schema({
     email: {
@@ -13,11 +15,18 @@ const UserSchema = Schema({
     password: {
         type: String,
         required: true
+    },
+    apiKeyProduction: {
+        type: String
+    },
+    apiKeyPreview: {
+        type: String
     }
 });
 
 
 UserSchema.pre('save', PreSaveFunction);
+UserSchema.pre('save', AddApiKeyFunction);
 
 UserSchema.methods.comparePassword = function (candidatePassword, cb) {
 

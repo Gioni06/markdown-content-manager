@@ -22,6 +22,7 @@
     "lodash": "^4.16.2",
     "mongoose": "^4.6.1",
     "mongoose-unique-validator": "^1.0.2",
+    "node-uuid": "^1.4.7",
     "redis": "^2.6.2",
     "vision": "^4.1.0"
   },
