@@ -3,7 +3,6 @@
 const DocumentModel = require('./../../models/DocumentsModel/documentModel');
 const Boom = require('boom');
 
-const _ = require('lodash');
 module.exports = (request, reply) => {
 
     const userId = request.auth.credentials.id;

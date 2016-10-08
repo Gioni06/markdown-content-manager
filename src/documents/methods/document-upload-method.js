@@ -1,3 +1,4 @@
+/*
 'use strict';
 
 const DocumentModel = require('./../../models/DocumentsModel/documentModel');
@@ -26,3 +27,4 @@ module.exports = (request, reply) => {
         return reply({ message: 'Document saved successfully', data: document }).code(201);
     });
 };
+*/

@@ -2,7 +2,6 @@
 const Hapi = require('hapi');
 const Inert = require('inert');
 const Vision = require('vision');
-const Joi = require('joi');
 const HapiSwagger = require('hapi-swagger');
 const HapiAuthJWT = require('hapi-auth-jwt2'); // http://git.io/vT5dZ
 const Validate = require('./services/validateTokenFn');
@@ -36,13 +35,6 @@ const hapiPlugins = [
     }
 ];
 
-const jsonResponseSchema = Joi.object({
-    status: Joi.number().required(),
-    message: Joi.string().required(),
-    data: Joi.object()
-});
-
-
 server.register(hapiPlugins, (err) => {
 
     if (err) {
@@ -62,68 +54,6 @@ server.register(hapiPlugins, (err) => {
             validateFunc: ValidateContentDeliveryFn
         });
 
-    server.route({
-        method: 'GET',
-        path:'/welcome',
-        config: {
-            handler: (request, reply) => {
-
-                const welcomeMessage = {
-                    status: 200,
-                    message: 'Ok',
-                    data: {
-                        data: 'Welcome anonymous'
-                    }
-                };
-
-                return reply(welcomeMessage)
-                    .type('Application/JSON')
-                    .header('X-Author', 'Jonas Duri');
-            },
-            response: {
-                schema: jsonResponseSchema
-            },
-            description: 'Get a friendly welcome message',
-            notes: 'You can pass your name as a parameter',
-            tags: ['api','Welcome']
-        }
-    });
-
-    server.route({
-        method: 'GET',
-        path:'/user/welcome/{name}',
-        config: {
-            auth: 'contentDelivery',
-            handler: (request, reply) => {
-
-                const welcomeMessage = {
-                    status: 200,
-                    message: 'Ok',
-                    data: {
-                        data: `Welcome ${request.params.name}`
-                    }
-                };
-
-                return reply(welcomeMessage)
-                    .type('Application/JSON')
-                    .header('X-Author', 'Jonas Duri');
-            },
-            response: {
-                schema: jsonResponseSchema
-            },
-            description: 'Get a friendly welcome message',
-            notes: 'See the welcome message',
-            tags: ['api','User'],
-            validate: {
-                params: {
-                    name: Joi.string().required()
-                },
-                query: {
-                    token: Joi.string()
-                }
-            }
-        }
-    });
 });
 
 module.exports = server;

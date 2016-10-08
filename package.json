@@ -1,6 +1,6 @@
 {
   "name": "hapi-markdown-server",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Rest api to serve markdown content",
   "main": "index.js",
   "scripts": {
