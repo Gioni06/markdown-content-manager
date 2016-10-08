@@ -15,9 +15,7 @@ Mongoose.connect('mongodb://root:root123@database:27017/markdown');
 
 // Create a server with a host and port
 const server = new Hapi.Server({
-    debug: {
-        log: 'errors'
-    }
+
 });
 
 server.connection(config.server.connection);
