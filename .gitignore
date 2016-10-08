@@ -81,3 +81,4 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 .idea
+/config/config.production.json
