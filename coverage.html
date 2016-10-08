@@ -580,14 +580,22 @@
             <a href="#src/services/RedisService.js"><span class="dirname">src/services/</span><span class="basename">RedisService.js</span></a>
         </li>
         <li><a href="#linting">Linting Report</a></li>
+        <li>
+            <span class="lint"><span class="low">11</span> || <span class="low">6</span></span>
+            <a href="#lint-src/documents/methods/document-upload-method.js">src/documents/methods/document-upload-method.js</a>
+        </li>
+        <li>
+            <span class="lint"><span class="high">0</span> || <span class="low">1</span></span>
+            <a href="#lint-src/documents/routes/document-upload.js">src/documents/routes/document-upload.js</a>
+        </li>
     </div>
     <div id="tests">
       <h1>Test Report</h1>
       <div class="stats high">
           <div class="failures">0</div>
           <div class="skipped">0</div>
-          <div class="test-count">18</div>
-          <div class="duration">427</div>
+          <div class="test-count">20</div>
+          <div class="duration">425</div>
       </div>
       <div id="filters">
           <input type="checkbox" checked="" onchange="filter(this)" value="success" id="show-success">
@@ -622,35 +630,35 @@
               <td class="test-title">Authentication Plugin should create a new user
                   
               </td>
-              <td class="test-duration">126</td>
+              <td class="test-duration">78</td>
           </tr>
           <tr class="show Authentication_Plugin success">
               <td class="test-id">2</td>
               <td class="test-title">Authentication Plugin should fail when user already exists
                   
               </td>
-              <td class="test-duration">29</td>
+              <td class="test-duration">20</td>
           </tr>
           <tr class="show Authentication_Plugin success">
               <td class="test-id">3</td>
               <td class="test-title">Authentication Plugin should fail when user creation fails
                   
               </td>
-              <td class="test-duration">22</td>
+              <td class="test-duration">17</td>
           </tr>
           <tr class="show Document_Plugin success">
               <td class="test-id">4</td>
               <td class="test-title">Document Plugin should create a new document
                   
               </td>
-              <td class="test-duration">53</td>
+              <td class="test-duration">110</td>
           </tr>
           <tr class="show Document_Plugin success">
               <td class="test-id">5</td>
               <td class="test-title">Document Plugin should respond with an error when document creation fails
                   
               </td>
-              <td class="test-duration">22</td>
+              <td class="test-duration">21</td>
           </tr>
           <tr class="show DocumentModel success">
               <td class="test-id">6</td>
@@ -659,89 +667,103 @@
               </td>
               <td class="test-duration">1</td>
           </tr>
-          <tr class="show Load_Config success">
+          <tr class="show DocumentModel success">
               <td class="test-id">7</td>
+              <td class="test-title">DocumentModel should get a document by id
+                  
+              </td>
+              <td class="test-duration">10</td>
+          </tr>
+          <tr class="show DocumentModel success">
+              <td class="test-id">8</td>
+              <td class="test-title">DocumentModel should return an error when no document with id exists
+                  
+              </td>
+              <td class="test-duration">2</td>
+          </tr>
+          <tr class="show Load_Config success">
+              <td class="test-id">9</td>
               <td class="test-title">Load Config should load developement configuration
                   
               </td>
-              <td class="test-duration">1</td>
+              <td class="test-duration">0</td>
           </tr>
           <tr class="show Load_Config success">
-              <td class="test-id">8</td>
+              <td class="test-id">10</td>
               <td class="test-title">Load Config should load production configuration
                   
               </td>
               <td class="test-duration">1</td>
           </tr>
           <tr class="show Load_Config success">
-              <td class="test-id">9</td>
+              <td class="test-id">11</td>
               <td class="test-title">Load Config should throw an error when no environment is specified
+                  
+              </td>
+              <td class="test-duration">0</td>
+          </tr>
+          <tr class="show Redis_service_unit_test success">
+              <td class="test-id">12</td>
+              <td class="test-title">Redis service unit test should create a Redis client
                   
               </td>
               <td class="test-duration">1</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
-              <td class="test-id">10</td>
-              <td class="test-title">Redis service unit test should create a Redis client
+              <td class="test-id">13</td>
+              <td class="test-title">Redis service unit test should set a value
                   
               </td>
               <td class="test-duration">2</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
-              <td class="test-id">11</td>
-              <td class="test-title">Redis service unit test should set a value
+              <td class="test-id">14</td>
+              <td class="test-title">Redis service unit test should get a value
+                  
+              </td>
+              <td class="test-duration">2</td>
+          </tr>
+          <tr class="show UserModel success">
+              <td class="test-id">15</td>
+              <td class="test-title">UserModel should compare passwords
+                  
+              </td>
+              <td class="test-duration">72</td>
+          </tr>
+          <tr class="show UserModel success">
+              <td class="test-id">16</td>
+              <td class="test-title">UserModel should throw an error when password is invalid
+                  
+              </td>
+              <td class="test-duration">71</td>
+          </tr>
+          <tr class="show UserModel success">
+              <td class="test-id">17</td>
+              <td class="test-title">UserModel should not save a user which is already saved
                   
               </td>
               <td class="test-duration">3</td>
           </tr>
-          <tr class="show Redis_service_unit_test success">
-              <td class="test-id">12</td>
-              <td class="test-title">Redis service unit test should get a value
-                  
-              </td>
-              <td class="test-duration">1</td>
-          </tr>
           <tr class="show UserModel success">
-              <td class="test-id">13</td>
-              <td class="test-title">UserModel should compare passwords
-                  
-              </td>
-              <td class="test-duration">75</td>
-          </tr>
-          <tr class="show UserModel success">
-              <td class="test-id">14</td>
-              <td class="test-title">UserModel should throw an error when password is invalid
-                  
-              </td>
-              <td class="test-duration">77</td>
-          </tr>
-          <tr class="show UserModel success">
-              <td class="test-id">15</td>
-              <td class="test-title">UserModel should not save a user which is already saved
-                  
-              </td>
-              <td class="test-duration">2</td>
-          </tr>
-          <tr class="show UserModel success">
-              <td class="test-id">16</td>
+              <td class="test-id">18</td>
               <td class="test-title">UserModel should save a user which is not already saved
                   
               </td>
-              <td class="test-duration">2</td>
+              <td class="test-duration">3</td>
           </tr>
           <tr class="show UserModel success">
-              <td class="test-id">17</td>
+              <td class="test-id">19</td>
               <td class="test-title">UserModel should not save a user when findone returns an error
                   
               </td>
-              <td class="test-duration">2</td>
+              <td class="test-duration">4</td>
           </tr>
           <tr class="show UserModel success">
-              <td class="test-id">18</td>
+              <td class="test-id">20</td>
               <td class="test-title">UserModel should not save a user when save returns an error
                   
               </td>
-              <td class="test-duration">2</td>
+              <td class="test-duration">3</td>
           </tr>
           </tbody>
       </table>
@@ -750,8 +772,8 @@
         <h1>Code Coverage Report</h1>
         <div class="stats high">
             <div class="percentage">100%</div>
-            <div class="sloc">253</div>
-            <div class="hits">253</div>
+            <div class="sloc">287</div>
+            <div class="hits">287</div>
             <div class="misses">0</div>
         </div>
         <div id="files">
@@ -1326,8 +1348,8 @@
                 <h2 id="src/documents/methods/document-post-method.js">src/documents/methods/document-post-method.js</h2>
                 <div class="stats high">
                     <div class="percentage">100%</div>
-                    <div class="sloc">12</div>
-                    <div class="hits">12</div>
+                    <div class="sloc">29</div>
+                    <div class="hits">29</div>
                     <div class="misses">0</div>
                 </div>
                 <table>
@@ -1367,32 +1389,32 @@
                         <tr class="hit">
                             <td class="line" data-tooltip>5</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const FrontMatterParser &#x3D; require(&#x27;front-matter&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>6</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">module.exports &#x3D; (request, reply) &#x3D;&gt; {</td>
+                            <td class="source">const _ &#x3D; require(&#x27;lodash&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>7</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">module.exports &#x3D; (request, reply) &#x3D;&gt; {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>8</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    const Document &#x3D; new DocumentModel(request.payload);</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>9</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>2</td>
-                            <td class="source">    Document.save((err, document) &#x3D;&gt; {</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    const userId &#x3D; request.auth.credentials.id;</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>10</td>
@@ -1403,41 +1425,167 @@
                         <tr class="hit">
                             <td class="line" data-tooltip>11</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source">        if (err) {</td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">    const markdown &#x3D; &#x60;---</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>12</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">            return reply(Boom.badRequest(&#x27;Cannot create document&#x27;));</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">title: Just hack&#x27;n</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>13</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        }</td>
+                            <td class="source">description: Nothing to see here</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>14</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">        return reply({ message: &#x27;Document saved successfully&#x27;, data: document }).code(201);</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">---</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>15</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    });</td>
+                            <td class="source"></td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>16</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">};</td>
+                            <td class="source">This is some text about some stuff that happened sometime ago&#x60;;</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>17</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">    const content &#x3D; FrontMatterParser(markdown);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>18</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>19</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">    const attributes &#x3D; [];</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>20</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">    _.forEach(content.attributes, (val, key) &#x3D;&gt; {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>21</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>22</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        attributes.push({ tag: key, value: val });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>23</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>24</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">    const Document &#x3D; new DocumentModel({</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>25</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        attributes,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>26</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        body: content.body,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>27</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        owner: userId</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>28</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>29</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>30</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>2</td>
+                            <td class="source">    Document.save((err, document) &#x3D;&gt; {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>31</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>32</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        if (err) {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>33</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">            return reply(Boom.badRequest(&#x27;Cannot create document&#x27;));</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>34</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>35</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">        return reply({ message: &#x27;Document saved successfully&#x27;, data: document }).code(201);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>36</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>37</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>38</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
                             <td class="source"></td>
@@ -1614,8 +1762,8 @@
                 <h2 id="src/models/DocumentsModel/documentModel.js">src/models/DocumentsModel/documentModel.js</h2>
                 <div class="stats high">
                     <div class="percentage">100%</div>
-                    <div class="sloc">10</div>
-                    <div class="hits">10</div>
+                    <div class="sloc">27</div>
+                    <div class="hits">27</div>
                     <div class="misses">0</div>
                 </div>
                 <table>
@@ -1655,59 +1803,173 @@
                         <tr class="hit">
                             <td class="line" data-tooltip>5</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">const DocumentSchema &#x3D; Schema({</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>6</td>
                             <td class="lint empty"></td>
-                            <td class="hits" data-tooltip>1</td>
-                            <td class="source">const DocumentSchema &#x3D; Schema({</td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    attributes: [{</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>7</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    body: {</td>
+                            <td class="source">        tag: String,</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>8</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        type: String,</td>
+                            <td class="source">        value: Schema.Types.Mixed</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>9</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">        required: true</td>
+                            <td class="source">    }],</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>10</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">    }</td>
+                            <td class="source">    body: {</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>11</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">});</td>
+                            <td class="source">        type: String,</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>12</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source"></td>
+                            <td class="source">        required: true</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>13</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    },</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>14</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    owner: {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>15</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        type: String,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>16</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        ref: &#x27;User&#x27;,</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>17</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        required: true</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>18</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>19</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">});</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>20</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>21</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">DocumentSchema.statics.findDocumentById &#x3D; function (query, callback) {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>22</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>23</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    this.model(&#x27;Document&#x27;).findOne(query, (err, document) &#x3D;&gt; {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>24</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>25</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        if (err) {</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>26</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">            return callback(err, null);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>27</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">        }</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>28</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip>1</td>
+                            <td class="source">        callback(null, document);</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>29</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">    });</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>30</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source">};</td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>31</td>
+                            <td class="lint empty"></td>
+                            <td class="hits" data-tooltip></td>
+                            <td class="source"></td>
+                        </tr>
+                        <tr class="hit">
+                            <td class="line" data-tooltip>32</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
                             <td class="source">module.exports &#x3D; Mongoose.model(&#x27;Document&#x27;, DocumentSchema);</td>
                         </tr>
                         <tr class="hit">
-                            <td class="line" data-tooltip>14</td>
+                            <td class="line" data-tooltip>33</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
                             <td class="source"></td>
@@ -2319,7 +2581,7 @@
                             <td class="line" data-tooltip>37</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip></td>
-                            <td class="source">            throw new Error(err);</td>
+                            <td class="source">            throw new Error(&#x27;no match&#x27;);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>38</td>
@@ -2349,7 +2611,7 @@
                             <td class="line" data-tooltip>42</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">            cb(true,false);</td>
+                            <td class="source">            cb(false,true);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>43</td>
@@ -2373,7 +2635,7 @@
                             <td class="line" data-tooltip>46</td>
                             <td class="lint empty"></td>
                             <td class="hits" data-tooltip>1</td>
-                            <td class="source">            cb(false,true);</td>
+                            <td class="source">            cb(true,false);</td>
                         </tr>
                         <tr class="hit">
                             <td class="line" data-tooltip>47</td>
@@ -2913,10 +3175,67 @@
     </div>    <div id="linting">
         <h1>Linting Report</h1>
             <div class="lint-stats">
-                <span class="lint-errors high">0</span>
-                <span class="lint-warnings high">0</span>
+                <span class="lint-errors low">11</span>
+                <span class="lint-warnings low">7</span>
             </div>
             <div class="lint-files">
-            </div>
+                <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                    <h2 id="lint-src/documents/methods/document-upload-method.js">src/documents/methods/document-upload-method.js</h2>
+                    <ul>
+                        <li class="lint-entry">L3 - <span class="level-WARNING">WARNING</span> - no-unused-vars - &#x27;DocumentModel&#x27; is defined but never used.</li>
+                        <li class="lint-entry">L5 - <span class="level-WARNING">WARNING</span> - no-unused-vars - &#x27;FrontMatterParser&#x27; is defined but never used.</li>
+                        <li class="lint-entry">L8 - <span class="level-WARNING">WARNING</span> - hapi&#x2f;hapi-scope-start - Missing blank line at beginning of function.</li>
+                        <li class="lint-entry">L9 - <span class="level-WARNING">WARNING</span> - no-unused-vars - &#x27;userId&#x27; is defined but never used.</li>
+                        <li class="lint-entry">L11 - <span class="level-ERROR">ERROR</span> - no-var - Unexpected var, use let or const instead.</li>
+                        <li class="lint-entry">L14 - <span class="level-ERROR">ERROR</span> - no-var - Unexpected var, use let or const instead.</li>
+                        <li class="lint-entry">L15 - <span class="level-ERROR">ERROR</span> - no-var - Unexpected var, use let or const instead.</li>
+                        <li class="lint-entry">L15 - <span class="level-ERROR">ERROR</span> - quotes - Strings must use singlequote.</li>
+                        <li class="lint-entry">L16 - <span class="level-ERROR">ERROR</span> - no-var - Unexpected var, use let or const instead.</li>
+                        <li class="lint-entry">L18 - <span class="level-ERROR">ERROR</span> - handle-callback-err - Expected error to be handled.</li>
+                        <li class="lint-entry">L18 - <span class="level-WARNING">WARNING</span> - hapi&#x2f;hapi-scope-start - Missing blank line at beginning of function.</li>
+                        <li class="lint-entry">L18 - <span class="level-ERROR">ERROR</span> - prefer-arrow-callback - Unexpected function expression.</li>
+                        <li class="lint-entry">L24 - <span class="level-ERROR">ERROR</span> - prefer-arrow-callback - Unexpected function expression.</li>
+                        <li class="lint-entry">L24 - <span class="level-WARNING">WARNING</span> - hapi&#x2f;hapi-scope-start - Missing blank line at beginning of function.</li>
+                        <li class="lint-entry">L24 - <span class="level-ERROR">ERROR</span> - handle-callback-err - Expected error to be handled.</li>
+                        <li class="lint-entry">L25 - <span class="level-ERROR">ERROR</span> - no-var - Unexpected var, use let or const instead.</li>
+                        <li class="lint-entry">L30 - <span class="level-ERROR">ERROR</span> - semi - Missing semicolon.</li>
+                    </ul>
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                    <h2 id="lint-src/documents/routes/document-upload.js">src/documents/routes/document-upload.js</h2>
+                    <ul>
+                        <li class="lint-entry">L3 - <span class="level-WARNING">WARNING</span> - no-unused-vars - &#x27;Joi&#x27; is defined but never used.</li>
+                    </ul>
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>            <div class="lint-file">
+                </div>        </div>
     </div>  </body>
 </html>

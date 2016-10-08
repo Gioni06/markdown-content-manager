@@ -36,7 +36,7 @@ module.exports = function (request, reply) {
                 RedisService.set(session.id, JSON.stringify(session));
 
                 const token = JWT.sign(session, JWT_SECRET);
-                reply({ token }).header('Authorization', token).code(200);
+                reply({ token, user }).header('Authorization', token).code(200);
             }
         });
     });

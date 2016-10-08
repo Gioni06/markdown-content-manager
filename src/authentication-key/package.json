@@ -1,0 +1,11 @@
+{
+  "name": "authentication-key-component",
+  "version": "0.0.1",
+  "description": "Fetch content with production or development api key",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Duri <jonas.duri@gmail.com>",
+  "license": "ISC"
+}

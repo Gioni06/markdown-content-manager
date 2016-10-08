@@ -23,7 +23,7 @@ lab.experiment('UserModel', () => {
         User.validate();
         // // Stub the save function on the instance prototype
         // var User = Sinon.stub(UserModel.prototype,'comparePassword').yields(null, true);
-        User.comparePassword('test', (err, hash) => {
+        User.comparePassword('test', (hash, err) => {
 
             expect(hash).to.equal(true);
             expect(err).to.equal(false);
@@ -44,7 +44,7 @@ lab.experiment('UserModel', () => {
         User.validate();
         // // Stub the save function on the instance prototype
         // var User = Sinon.stub(UserModel.prototype,'comparePassword').yields(null, true);
-        User.comparePassword('invalid', (err, hash) => {
+        User.comparePassword('invalid', (hash, err) => {
 
             expect(hash).to.equal(false);
             expect(err).to.equal(true);

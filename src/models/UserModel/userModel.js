@@ -34,16 +34,16 @@ UserSchema.methods.comparePassword = function (candidatePassword, cb) {
 
         /* $lab:coverage:off$ */
         if (err) {
-            throw new Error(err);
+            throw new Error('no match');
         }
         /* $lab:coverage:on$ */
 
         if (isMatch === false) {
-            cb(true,false);
+            cb(false,true);
         }
 
         if (isMatch === true) {
-            cb(false,true);
+            cb(true,false);
         }
     });
 };

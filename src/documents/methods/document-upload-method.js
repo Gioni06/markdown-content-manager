@@ -2,17 +2,19 @@
 
 const DocumentModel = require('./../../models/DocumentsModel/documentModel');
 const Boom = require('boom');
+const FrontMatterParser = require('front-matter');
 
-const _ = require('lodash');
 module.exports = (request, reply) => {
+    const content = FrontMatterParser(markdown);
 
-    const userId = request.auth.credentials.id;
-    const body = request.payload.body;
-    const attributes = request.payload.attributes;
+    const attributes = [];
+    _.forEach(content.attributes, (val, key) => {
 
+        attributes.push({ tag: key, value: val });
+    });
     const Document = new DocumentModel({
         attributes,
-        body,
+        body: content.body,
         owner: userId
     });
 

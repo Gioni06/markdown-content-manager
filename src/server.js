@@ -6,6 +6,7 @@ const Joi = require('joi');
 const HapiSwagger = require('hapi-swagger');
 const HapiAuthJWT = require('hapi-auth-jwt2'); // http://git.io/vT5dZ
 const Validate = require('./services/validateTokenFn');
+const ValidateContentDeliveryFn = require('./services/validateContentDeliveryToken');
 const Mongoose = require('mongoose');
 const JWT_SECRET = process.env.JWT_SECRET;
 const Config = require('./../app/loadConfig');
@@ -14,7 +15,11 @@ const HapiOptions = require('./../config/hapi-options');
 Mongoose.connect('mongodb://root:root123@database:27017/markdown');
 
 // Create a server with a host and port
-const server = new Hapi.Server();
+const server = new Hapi.Server({
+    debug: {
+        log: 'errors'
+    }
+});
 
 server.connection(config.server.connection);
 
@@ -23,6 +28,7 @@ const hapiPlugins = [
     Inert,
     Vision,
     require('./authentication'),
+    require('./authentication-key'),
     require('./documents'),
     {
         register: HapiSwagger,
@@ -47,7 +53,13 @@ server.register(hapiPlugins, (err) => {
         {
             key: JWT_SECRET,
             validateFunc: Validate,
-            verifyOptions: { algorithms: ['HS256'], ignoreExpiration: false }
+            verifyOptions: { algorithms: ['HS256'], ignoreExpiration: true }
+        });
+
+    server.auth.strategy('contentDelivery', 'contentDelivery',
+        {
+            tokenName: 'content_token',
+            validateFunc: ValidateContentDeliveryFn
         });
 
     server.route({
@@ -81,7 +93,7 @@ server.register(hapiPlugins, (err) => {
         method: 'GET',
         path:'/user/welcome/{name}',
         config: {
-            auth: 'jwt',
+            auth: 'contentDelivery',
             handler: (request, reply) => {
 
                 const welcomeMessage = {
@@ -105,6 +117,9 @@ server.register(hapiPlugins, (err) => {
             validate: {
                 params: {
                     name: Joi.string().required()
+                },
+                query: {
+                    token: Joi.string()
                 }
             }
         }

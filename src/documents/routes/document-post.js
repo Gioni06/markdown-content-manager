@@ -12,7 +12,11 @@ module.exports = (handler) => {
             handler,
             validate: {
                 payload: {
-                    body: Joi.string().required()
+                    body: Joi.string().required().example('# Markdown Content'),
+                    attributes: Joi.array().items(Joi.object({
+                        tag: Joi.string().example('Title'),
+                        value: Joi.string().example('My Title')
+                    }))
                 }
             },
             description: 'Creates a new document',
