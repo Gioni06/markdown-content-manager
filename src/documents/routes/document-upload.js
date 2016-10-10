@@ -1,7 +1,7 @@
-/*
 'use strict';
 
 const Joi = require('joi');
+
 
 module.exports = (handler) => {
 
@@ -12,9 +12,9 @@ module.exports = (handler) => {
             auth: 'jwt',
             handler,
             payload: {
+                maxBytes: 209715200,
                 output: 'stream',
-                parse: true,
-                allow: 'multipart/form-data'
+                parse: false
             },
             description: 'Upload Content from a markdown file and create a new document',
             notes: '....',
@@ -22,4 +22,3 @@ module.exports = (handler) => {
         }
     };
 };
-*/

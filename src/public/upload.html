@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Markdown Content Server</title>
+</head>
+<body>
+<main>
+    <nav>
+        <ul>
+            <li><a href="/">Start</a></li>
+            <li><a href="/upload.html">Upload</a></li>
+        </ul>
+    </nav>
+    <h1>Upload</h1>
+    <div>
+        <form>
+            <label for="token">Access Token</label>
+            <input type="text" id="token">
+        </form>
+        <hr>
+        <form id="file-form">
+            <input type="file" id="file-select" name="file"/>
+            <button type="submit" id="upload-button">Upload</button>
+        </form>
+    </div>
+</main>
+<script   src="http://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script>
+    var form = document.getElementById('file-form');
+    var uploadButton = document.getElementById('upload-button');
+
+    $(form).on('submit', function(e) {
+        e.preventDefault();
+
+        var file_data = $('#file-select')[0].files[0];
+        var form_data = new FormData();
+        form_data.append('file', file_data);
+        $.ajax({
+            method: 'POST',
+            url: 'http://localhost:8080/upload-document',
+            headers: {
+                "Authorization": $('#token').val()
+            },
+            contentType: false,
+            cache: false,
+            data: form_data,
+            type: 'POST',
+            processData: false,
+            success: function(res){
+                console.log(res); // display response from the PHP script, if any
+            },
+            error: function (err) {
+                console.error(err); // display response from the PHP script, if any
+            }
+        });
+    });
+</script>
+</body>
+</html>

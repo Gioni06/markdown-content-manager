@@ -11,11 +11,23 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const Config = require('./../app/loadConfig');
 const config = Config.loadConfig(process.env.environment || 'development');
 const HapiOptions = require('./../config/hapi-options');
+const Path = require('path');
 Mongoose.connect('mongodb://root:root123@database:27017/markdown');
 
+console.log(Path.join(__dirname, 'public'));
 // Create a server with a host and port
 const server = new Hapi.Server({
-
+    debug: {
+        request: ['error'],
+        log: 'error'
+    },
+    connections: {
+        routes: {
+            files: {
+                relativeTo: Path.join(__dirname, 'public')
+            }
+        }
+    }
 });
 
 server.connection(config.server.connection);
@@ -52,6 +64,17 @@ server.register(hapiPlugins, (err) => {
             validateFunc: ValidateContentDeliveryFn
         });
 
+    server.route({
+        method: 'GET',
+        path: '/{param*}',
+        handler: {
+            directory: {
+                path: '.',
+                redirectToSlash: true,
+                index: true
+            }
+        }
+    })
 });
 
 module.exports = server;

@@ -16,6 +16,7 @@ module.exports = (handler) => {
                 },
                 query: {
                     format: Joi.string(),
+                    front_matter: Joi.boolean(),
                     content_token: Joi.string().required()
 
                 }

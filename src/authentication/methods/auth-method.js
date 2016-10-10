@@ -30,7 +30,7 @@ module.exports = function (request, reply) {
                 const session = {
                     valid: true,
                     id: user._id,
-                    exp: new Date().getTime() + 1 * 60 * 1000 // expires in 30 minutes time
+                    exp: new Date().getTime() + 24* 60 * 60 * 1000 // expires in 30 minutes time
                 };
 
                 RedisService.set(session.id, JSON.stringify(session));
