@@ -580,22 +580,6 @@
             <a href="#src/services/RedisService.js"><span class="dirname">src/services/</span><span class="basename">RedisService.js</span></a>
         </li>
         <li><a href="#linting">Linting Report</a></li>
-        <li>
-            <span class="lint"><span class="low">1</span> || <span class="high">0</span></span>
-            <a href="#lint-src/authentication/methods/auth-method.js">src/authentication/methods/auth-method.js</a>
-        </li>
-        <li>
-            <span class="lint"><span class="low">10</span> || <span class="low">9</span></span>
-            <a href="#lint-src/documents/methods/document-upload-method.js">src/documents/methods/document-upload-method.js</a>
-        </li>
-        <li>
-            <span class="lint"><span class="high">0</span> || <span class="low">1</span></span>
-            <a href="#lint-src/documents/routes/document-upload.js">src/documents/routes/document-upload.js</a>
-        </li>
-        <li>
-            <span class="lint"><span class="low">1</span> || <span class="high">0</span></span>
-            <a href="#lint-src/server.js">src/server.js</a>
-        </li>
     </div>
     <div id="tests">
       <h1>Test Report</h1>
@@ -603,7 +587,7 @@
           <div class="failures">0</div>
           <div class="skipped">0</div>
           <div class="test-count">20</div>
-          <div class="duration">386</div>
+          <div class="duration">354</div>
       </div>
       <div id="filters">
           <input type="checkbox" checked="" onchange="filter(this)" value="success" id="show-success">
@@ -638,21 +622,21 @@
               <td class="test-title">Authentication Plugin should create a new user
                   
               </td>
-              <td class="test-duration">95</td>
+              <td class="test-duration">83</td>
           </tr>
           <tr class="show Authentication_Plugin success">
               <td class="test-id">2</td>
               <td class="test-title">Authentication Plugin should fail when user already exists
                   
               </td>
-              <td class="test-duration">22</td>
+              <td class="test-duration">18</td>
           </tr>
           <tr class="show Authentication_Plugin success">
               <td class="test-id">3</td>
               <td class="test-title">Authentication Plugin should fail when user creation fails
                   
               </td>
-              <td class="test-duration">20</td>
+              <td class="test-duration">14</td>
           </tr>
           <tr class="show Document_Plugin success">
               <td class="test-id">4</td>
@@ -666,7 +650,7 @@
               <td class="test-title">Document Plugin should respond with an error when document creation fails
                   
               </td>
-              <td class="test-duration">26</td>
+              <td class="test-duration">22</td>
           </tr>
           <tr class="show DocumentModel success">
               <td class="test-id">6</td>
@@ -680,7 +664,7 @@
               <td class="test-title">DocumentModel should get a document by id
                   
               </td>
-              <td class="test-duration">2</td>
+              <td class="test-duration">3</td>
           </tr>
           <tr class="show DocumentModel success">
               <td class="test-id">8</td>
@@ -701,14 +685,14 @@
               <td class="test-title">Load Config should load production configuration
                   
               </td>
-              <td class="test-duration">0</td>
+              <td class="test-duration">1</td>
           </tr>
           <tr class="show Load_Config success">
               <td class="test-id">11</td>
               <td class="test-title">Load Config should throw an error when no environment is specified
                   
               </td>
-              <td class="test-duration">0</td>
+              <td class="test-duration">1</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
               <td class="test-id">12</td>
@@ -722,35 +706,35 @@
               <td class="test-title">Redis service unit test should set a value
                   
               </td>
-              <td class="test-duration">4</td>
+              <td class="test-duration">2</td>
           </tr>
           <tr class="show Redis_service_unit_test success">
               <td class="test-id">14</td>
               <td class="test-title">Redis service unit test should get a value
                   
               </td>
-              <td class="test-duration">2</td>
+              <td class="test-duration">1</td>
           </tr>
           <tr class="show UserModel success">
               <td class="test-id">15</td>
               <td class="test-title">UserModel should compare passwords
                   
               </td>
-              <td class="test-duration">75</td>
+              <td class="test-duration">73</td>
           </tr>
           <tr class="show UserModel success">
               <td class="test-id">16</td>
               <td class="test-title">UserModel should throw an error when password is invalid
                   
               </td>
-              <td class="test-duration">73</td>
+              <td class="test-duration">71</td>
           </tr>
           <tr class="show UserModel success">
               <td class="test-id">17</td>
               <td class="test-title">UserModel should not save a user which is already saved
                   
               </td>
-              <td class="test-duration">2</td>
+              <td class="test-duration">3</td>
           </tr>
           <tr class="show UserModel success">
               <td class="test-id">18</td>
@@ -771,7 +755,7 @@
               <td class="test-title">UserModel should not save a user when save returns an error
                   
               </td>
-              <td class="test-duration">3</td>
+              <td class="test-duration">2</td>
           </tr>
           </tbody>
       </table>
@@ -3135,77 +3119,10 @@
     </div>    <div id="linting">
         <h1>Linting Report</h1>
             <div class="lint-stats">
-                <span class="lint-errors low">12</span>
-                <span class="lint-warnings low">10</span>
+                <span class="lint-errors high">0</span>
+                <span class="lint-warnings high">0</span>
             </div>
             <div class="lint-files">
-                <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                    <h2 id="lint-src/authentication/methods/auth-method.js">src/authentication/methods/auth-method.js</h2>
-                    <ul>
-                        <li class="lint-entry">L33 - <span class="level-ERROR">ERROR</span> - space-infix-ops - Infix operators must be spaced.</li>
-                    </ul>
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                    <h2 id="lint-src/documents/methods/document-upload-method.js">src/documents/methods/document-upload-method.js</h2>
-                    <ul>
-                        <li class="lint-entry">L3 - <span class="level-WARNING">WARNING</span> - no-unused-vars - &#x27;DocumentModel&#x27; is defined but never used.</li>
-                        <li class="lint-entry">L5 - <span class="level-WARNING">WARNING</span> - no-unused-vars - &#x27;FrontMatterParser&#x27; is defined but never used.</li>
-                        <li class="lint-entry">L6 - <span class="level-WARNING">WARNING</span> - no-unused-vars - &#x27;_&#x27; is defined but never used.</li>
-                        <li class="lint-entry">L8 - <span class="level-WARNING">WARNING</span> - no-unused-vars - &#x27;Path&#x27; is defined but never used.</li>
-                        <li class="lint-entry">L10 - <span class="level-WARNING">WARNING</span> - hapi&#x2f;hapi-scope-start - Missing blank line at beginning of function.</li>
-                        <li class="lint-entry">L11 - <span class="level-ERROR">ERROR</span> - no-var - Unexpected var, use let or const instead.</li>
-                        <li class="lint-entry">L12 - <span class="level-WARNING">WARNING</span> - brace-style - Statement inside of curly braces should be on next line.</li>
-                        <li class="lint-entry">L13 - <span class="level-ERROR">ERROR</span> - no-var - Unexpected var, use let or const instead.</li>
-                        <li class="lint-entry">L13 - <span class="level-ERROR">ERROR</span> - quotes - Strings must use singlequote.</li>
-                        <li class="lint-entry">L14 - <span class="level-ERROR">ERROR</span> - no-var - Unexpected var, use let or const instead.</li>
-                        <li class="lint-entry">L16 - <span class="level-ERROR">ERROR</span> - prefer-arrow-callback - Unexpected function expression.</li>
-                        <li class="lint-entry">L16 - <span class="level-WARNING">WARNING</span> - hapi&#x2f;hapi-scope-start - Missing blank line at beginning of function.</li>
-                        <li class="lint-entry">L17 - <span class="level-ERROR">ERROR</span> - semi - Missing semicolon.</li>
-                        <li class="lint-entry">L20 - <span class="level-ERROR">ERROR</span> - handle-callback-err - Expected error to be handled.</li>
-                        <li class="lint-entry">L20 - <span class="level-WARNING">WARNING</span> - hapi&#x2f;hapi-scope-start - Missing blank line at beginning of function.</li>
-                        <li class="lint-entry">L20 - <span class="level-ERROR">ERROR</span> - prefer-arrow-callback - Unexpected function expression.</li>
-                        <li class="lint-entry">L20 - <span class="level-WARNING">WARNING</span> - no-shadow - &#x27;file&#x27; is already declared in the upper scope.</li>
-                        <li class="lint-entry">L23 - <span class="level-ERROR">ERROR</span> - semi - Missing semicolon.</li>
-                        <li class="lint-entry">L25 - <span class="level-ERROR">ERROR</span> - keyword-spacing - Expected space&#x28;s&#x29; after &quot;if&quot;.</li>
-                    </ul>
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                    <h2 id="lint-src/documents/routes/document-upload.js">src/documents/routes/document-upload.js</h2>
-                    <ul>
-                        <li class="lint-entry">L3 - <span class="level-WARNING">WARNING</span> - no-unused-vars - &#x27;Joi&#x27; is defined but never used.</li>
-                    </ul>
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                    <h2 id="lint-src/server.js">src/server.js</h2>
-                    <ul>
-                        <li class="lint-entry">L77 - <span class="level-ERROR">ERROR</span> - semi - Missing semicolon.</li>
-                    </ul>
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>            <div class="lint-file">
-                </div>        </div>
+            </div>
     </div>  </body>
 </html>

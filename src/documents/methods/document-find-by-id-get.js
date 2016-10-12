@@ -20,11 +20,12 @@ module.exports = (request, reply) => {
             return reply(Boom.notFound('Document not found'));
         }
 
-        if(include_fm === true) {
-            if(document.attributes.length > 0) {
-                var front = '---\n';
+        if (include_fm === true) {
+            if (document.attributes.length > 0) {
+                let front = '---\n';
 
-                _.forEach(document.attributes, function(attr) {
+                _.forEach(document.attributes, (attr) => {
+
                     front += `${attr.tag} : ${attr.value}    \n`;
                 });
 
@@ -34,20 +35,20 @@ module.exports = (request, reply) => {
             }
         }
 
-        if(format === 'html') {
+        if (format === 'html') {
             const response = reply(Marked(document.body));
             response.type('text/html');
             response.header('X-Content-Type', 'markdown');
             return response;
         }
 
-        if(format === 'markdown') {
+        if (format === 'markdown') {
             const response = reply(document.body);
             response.type('text/markdown');
             response.header('X-Content-Type', 'markdown');
             return response;
         }
 
-        return reply({ message: 'Document found', data: document }).code(200)
+        return reply({ message: 'Document found', data: document }).code(200);
     });
 };

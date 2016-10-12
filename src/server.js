@@ -25,7 +25,8 @@ const server = new Hapi.Server({
         routes: {
             files: {
                 relativeTo: Path.join(__dirname, 'public')
-            }
+            },
+            cors: true
         }
     }
 });
@@ -74,7 +75,7 @@ server.register(hapiPlugins, (err) => {
                 index: true
             }
         }
-    })
+    });
 });
 
 module.exports = server;
