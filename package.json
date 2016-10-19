@@ -4,6 +4,7 @@
   "description": "Rest api to serve markdown content",
   "main": "index.js",
   "scripts": {
+    "dev": "node_modules/.bin/nodemon index.js",
     "test": "node_modules/.bin/lab -r html -o coverage.html -r console -o stdout -c --coverage-exclude node_modules -t 90 -D -L"
   },
   "author": "Jonas Duri <jonas.duri@gmail.com>",
