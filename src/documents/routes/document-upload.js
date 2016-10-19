@@ -11,7 +11,8 @@ module.exports = (handler) => {
             payload: {
                 maxBytes: 209715200,
                 output: 'stream',
-                parse: false
+                parse: false,
+                uploads: './uploads'
             },
             description: 'Upload Content from a markdown file and create a new document',
             notes: '....',

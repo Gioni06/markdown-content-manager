@@ -7,13 +7,15 @@ const _ = require('lodash');
 const Fs = require('fs');
 const Multiparty = require('multiparty');
 
-const upload = (files, reply) => {
+const upload = (files, reply, request) => {
 
     if (files.file[0].headers['content-type'] !== 'text/markdown') {
         return reply(Boom.notAcceptable('Only markdown files are supported for now'));
     }
 
     Fs.readFile(files.file[0].path,'utf8', (err, data) => {
+
+        Fs.unlink(files.file[0].path);
 
         if (err) {
             return reply(Boom.internal('Read file error'));
@@ -51,7 +53,8 @@ module.exports = (request, reply) => {
             reply(Boom.badData(err));
         }
         else {
-            upload(files, reply);
+            console.log(files)
+            upload(files, reply, request);
         }
     });
 };
