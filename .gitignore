@@ -82,3 +82,5 @@ crashlytics-build.properties
 fabric.properties
 .idea
 /config/config.production.json
+/coverage.html
+uploads/
